@@ -1,0 +1,68 @@
+html {
+  height: 100%;
+  width: 100%;
+  background-color:#E7E4E4 ;
+}
+body{
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+}
+.homepage{
+
+
+    border-color: rgb #E7E4E4;
+    border-style: solid #E7E4E4;
+    background-color: #002F75;
+  opacity: 80%;
+}
+ 
+.titulo1 {
+  color:white; 
+  text-align: center;
+}
+.logo{
+  width: 10%;
+  heught: 10%;
+}
+.formulario {
+ display: flex;
+ justify-content: center;
+align-items: center;
+  
+}
+.botoes {
+ display: flex;
+ justify-content: center;
+align-items: center;
+}
+.botoesbaixos {
+ display: flex;
+ justify-content: center;
+align-items: center;
+}
+.btn3 {
+ display: flex;
+ justify-content: center;
+align-items: center;
+}
+.btn4 {
+ display: flex;
+ justify-content: center;
+align-items: center;
+}
+.btn5 {
+ display: flex;
+ justify-content: center;
+align-items: center;
+}
+.btn6 {
+ display: flex;
+ justify-content: center;
+align-items: center;
+}
+.final {
+background-color: white;
+  text-align: center;
+  margin:0px;
+}
