@@ -1,0 +1,42 @@
+html {
+  height: 100%;
+  width: 100%;
+  background-color:#E7E4E4 ;
+}
+body{
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+}
+.homepage{
+
+border-width: 0px;
+    border-color: rgb #E7E4E4;
+    border-style: solid #E7E4E4;
+    background-color: #002F75;
+  opacity : 80%;
+  }
+
+
+.titulo1{
+  color:white;
+  text-align: center;
+}
+.titulo2 {
+  text-align: center;
+}
+  .logo {
+    width: 10%;
+    height: 10%;
+  }
+
+  .tabela{
+display: flex;
+justify-content: center;
+  
+}
+  .final {
+  background-color: white;
+
+}
+ 
