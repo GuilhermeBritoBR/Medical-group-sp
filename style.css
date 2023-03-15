@@ -1,0 +1,128 @@
+html {
+  height: 100%;
+  width: 100%;
+  background-color: #E7E4E4;
+  
+}
+body{
+  margin: 0px;
+}
+.homepage{
+
+    
+    background-color: #002F75;
+   opacity:80%;
+   height:100%;
+   width: 100%;
+  
+
+  
+  
+}
+.centro {
+  border-width: 0px;
+background-color: #e7e4e4;
+  border-style: solid #e7e4e4;
+  opacity: 100%;
+  
+  
+
+}
+.titulo1 {
+  color: white;
+  text-align: center;
+ 
+}
+.logo {
+  position: left;
+  width: 10%;
+  height: 10%;
+}
+
+.centroimagem {
+  
+  opacity: 80%;
+  background: #002F75;
+ 
+ 
+
+}
+
+
+
+  
+
+.final {
+background-color: white;
+  text-align: center;
+margin-top:10px;
+  
+ 
+  
+}
+
+
+.centrovazio {
+
+   background-color: #E7E4E4;
+  border-color: rgb #E7E4E4;
+  border-width: 20px;
+}
+.botoescentro {
+text-align: center;
+
+}
+.empatiaimg {
+ border-color: rgb #002F75;
+  border-width: 2px;
+  height: 20%;
+width: 20%;
+  margin-top:10px;
+  margin-left:200px;
+  margin-bottom: 30px;
+  margin-right: 70px;
+}
+.seriedadeimg{
+ border-color: rgb #002F75;
+  border-width: 2px;
+  height: 20%;
+width: 20%;
+  margin-top:10px;
+  margin-left:70px;
+  margin-bottom: 30px;
+  margin-right: 70px;
+}
+.cuidadoimg {
+border-color: rgb #002F75;
+  border-width: 2px;
+  height: 21%;
+width: 21%;
+  margin-top:10px;
+  margin-right:150px;
+  margin-bottom: 30px;
+  margin-left: 70px;
+}
+.empatia{
+  position: absolute;
+right:400px;
+top:  830px;
+  color:white;
+  
+}
+.seriedade{
+ position: absolute;
+right:49%;
+top:  830px;
+  
+  color:white;
+  
+}
+.respeito{
+ color:white;
+position: absolute;
+left:350px;
+top:  830px;
+}
+.texto{
+  
+}
