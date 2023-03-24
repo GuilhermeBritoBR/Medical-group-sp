@@ -1,107 +1,57 @@
+/* HTML INTEIRO*/
 html {
   height: 100%;
   width: 100%;
   background-color: #E7E4E4;
-  
 }
+/*CORPO DO SITE(BODY)*/
 body{
   margin: 0px;
 }
+/*É O BANNER A HOMEPAGE*/
 .homepage{
-
-    
+   
     background-color: #002F75;
    opacity:80%;
    height:100%;
    width: 100%;
-  
-
-  
-  
 }
+/* é ONDE FICA OS BOTOES E O ESPAÇAMENTO VAZIO*/
 .centro {
   border-width: 0px;
 background-color: #e7e4e4;
   border-style: solid #e7e4e4;
   opacity: 100%;
-  
-  
-
+  width: 50%;
+  height: 50%;
+  display: inline-block;
 }
+/* É O TITULO DO SITE*/
 .titulo1 {
   color: white;
   text-align: center;
  
 }
+/* LOGO DO SITE*/
 .logo {
   position: left;
   width: 10%;
   height: 10%;
 }
-
-.centroimagem {
-  
-  opacity: 80%;
-  background: #002F75;
- 
- 
-
-}
-
-
-
-  
-
+/* RODAPÉ DO SITE*/
 .final {
 background-color: white;
   text-align: center;
 margin-top:10px;
-  
- 
-  
 }
-
-
+/* CENTRO VAZIO COM O ESPAÇAMENTO ATÉ O RODAPÉ*/
 .centrovazio {
 
    background-color: #E7E4E4;
   border-color: rgb #E7E4E4;
   border-width: 20px;
 }
-.botoescentro {
-text-align: center;
-
-}
-.empatiaimg {
- border-color: rgb #002F75;
-  border-width: 2px;
-  height: 20%;
-width: 20%;
-  margin-top:10px;
-  margin-left:200px;
-  margin-bottom: 30px;
-  margin-right: 70px;
-}
-.seriedadeimg{
- border-color: rgb #002F75;
-  border-width: 2px;
-  height: 20%;
-width: 20%;
-  margin-top:10px;
-  margin-left:70px;
-  margin-bottom: 30px;
-  margin-right: 70px;
-}
-.cuidadoimg {
-border-color: rgb #002F75;
-  border-width: 2px;
-  height: 21%;
-width: 21%;
-  margin-top:10px;
-  margin-right:150px;
-  margin-bottom: 30px;
-  margin-left: 70px;
-}
+/* É O TEXTO DA IMAGEM "EMPATIA*/
 .empatia{
   position: absolute;
 right:400px;
@@ -109,6 +59,7 @@ top:  830px;
   color:white;
   
 }
+/* É O TEXTO DA IMAGEM "SERIEDADE*/
 .seriedade{
  position: absolute;
 right:49%;
@@ -117,12 +68,54 @@ top:  830px;
   color:white;
   
 }
+/* É O TEXTO DESCRISÃO DA IMAGEM"RESPEITO*/
 .respeito{
  color:white;
 position: absolute;
 left:350px;
 top:  830px;
 }
+/* É A DIV COM AS DESCRISÕES DAS IMAGENS*/
 .texto{
   
 }
+/* É O CARROSSEL DE IMAGENS*/
+.centroimagem{
+ display: inline-block;
+justify-content: center;
+}
+/* DIV QUE FICA A IMAGEM COM A DESCRISÃO "EMPATIA*/
+.divempatia{
+  display: inline-block;
+  width: 526px;
+  height: 336;
+
+
+}
+/* DIV QUE FICA A IMAGEM COM A DESCRISÃO "SERIEDADE*/
+.divseriedade{
+  display: inline-block;
+    width: 526px;
+    height: 336;
+   
+  }
+  /* DIV QUE FICA A IMAGEM COM A DESCRISÃO "CUIDADO*/
+  .divcuidado{
+    display: inline-block;
+    width: 526px;
+    height: 336;
+ 
+    
+    }
+    /* DIV QUE FICA COM AS IMAGENS DO CARROSEL*/
+    .imagenshome{
+     
+      opacity: 80%;
+      background: #002F75;
+     
+    }
+    /*IMAGEM MAIOR QUE AS OUTRAS DO CARROSEL POR ISSO A MODIFICAÇÃO*/
+    .cuidadoimg{
+width: ; 
+height: 
+    }
