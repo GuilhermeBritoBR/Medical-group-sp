@@ -37,8 +37,13 @@ display: flex;
 justify-content: center;
   
 }
-  .final {
-  background-color: white;
-
+.final {
+  display:grid;
+  position:absolute;
+background-color: white;
+  text-align: center;
+  margin-top:60%;
+  padding:0px;
+  width: 100%;
 }
  

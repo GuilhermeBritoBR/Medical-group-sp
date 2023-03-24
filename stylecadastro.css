@@ -44,9 +44,13 @@ text-align: center;
   display: flex;
   justify-content: center;
 }
-.final{
+.final {
+  display:grid;
+  position:absolute;
 background-color: white;
   text-align: center;
-  
+  margin-top:60%;
+  padding:0px;
+  width: 100%;
 }
 

@@ -49,16 +49,14 @@ background-color: #e7e4e4;
 }
 
 
-
-  
-
 .final {
+  display:grid;
+  position:absolute;
 background-color: white;
   text-align: center;
-margin-top:10px;
-  
- 
-  
+  margin-top:60%;
+  padding:0px;
+  width: 100%;
 }
 
 
