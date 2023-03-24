@@ -24,7 +24,10 @@ margin: 0px;
     border-color: rgb #E7E4E4;
     border-style: solid #E7E4E4;
     background-color: #002F75;
-   opacity:80%; }
+   opacity:80%;
+   font-size: 50px;
+   }
+
 .logo {
   position: left;
   width: 10%;
@@ -43,14 +46,30 @@ text-align: center;
 
   display: flex;
   justify-content: center;
+  
 }
+
+
+.date{
+
+  min-width: 200px;
+min-height: 50px;
+font-size: 20px;
+
+}
+
+#opçoes{
+  min-width: 200px;
+  min-height: 50px;
+  font-size: 20px;
+}
+
 .final {
   display:grid;
   position:absolute;
 background-color: white;
   text-align: center;
-  margin-top:60%;
+  margin-top:15%;
   padding:0px;
   width: 100%;
 }
-
