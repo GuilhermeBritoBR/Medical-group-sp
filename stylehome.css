@@ -20,17 +20,16 @@ body{
 .centro {
   border-width: 0px;
 background-color: #e7e4e4;
-  border-style: solid #e7e4e4;
   opacity: 100%;
-  width: 50%;
-  height: 50%;
-  display: inline-block;
+text-align: center;
+ 
+  
 }
 /* É O TITULO DO SITE*/
 .titulo1 {
   color: white;
   text-align: center;
- 
+ font-size: 50px;
 }
 /* LOGO DO SITE*/
 .logo {
@@ -53,27 +52,20 @@ margin-top:10px;
 }
 /* É O TEXTO DA IMAGEM "EMPATIA*/
 .empatia{
-  position: absolute;
-right:400px;
-top:  830px;
+ font-size: 30px;
   color:white;
-  
 }
 /* É O TEXTO DA IMAGEM "SERIEDADE*/
 .seriedade{
- position: absolute;
-right:49%;
-top:  830px;
-  
+font-size: 30px;
   color:white;
-  
+  text-align: 
 }
 /* É O TEXTO DESCRISÃO DA IMAGEM"RESPEITO*/
 .respeito{
  color:white;
-position: absolute;
-left:350px;
-top:  830px;
+ font-size: 30px;
+ right:-10px;
 }
 /* É A DIV COM AS DESCRISÕES DAS IMAGENS*/
 .texto{
@@ -81,41 +73,122 @@ top:  830px;
 }
 /* É O CARROSSEL DE IMAGENS*/
 .centroimagem{
+  
  display: inline-block;
-justify-content: center;
+
+min-width: 504px;
+min-width: 3304px;
 }
 /* DIV QUE FICA A IMAGEM COM A DESCRISÃO "EMPATIA*/
 .divempatia{
   display: inline-block;
   width: 526px;
-  height: 336;
-
-
+  height: 336px;
+  
 }
 /* DIV QUE FICA A IMAGEM COM A DESCRISÃO "SERIEDADE*/
 .divseriedade{
   display: inline-block;
     width: 526px;
-    height: 336;
-   
+    height: 336px;
+
   }
   /* DIV QUE FICA A IMAGEM COM A DESCRISÃO "CUIDADO*/
   .divcuidado{
     display: inline-block;
     width: 526px;
-    height: 336;
- 
+    height: 336px;
+    
     
     }
     /* DIV QUE FICA COM AS IMAGENS DO CARROSEL*/
     .imagenshome{
-     
+      
       opacity: 80%;
       background: #002F75;
-     
+/* min-height:504px;
+min-width:3304px; */
+min-width: 67%;
+  min-height: 67%;
+    
     }
     /*IMAGEM MAIOR QUE AS OUTRAS DO CARROSEL POR ISSO A MODIFICAÇÃO*/
     .cuidadoimg{
 width: ; 
-height: 
+height: ;
     }
+/*seção de botoes para ficar no centro*/
+.iniciobtn{
+  display: inline-block;
+  
+}
+.btn2home{
+  display: inline-block;
+}
+.btn3home{
+  display: inline-block;
+}
+.btn4home{
+  display: inline-block;
+}
+.btn5home{
+  display: inline-block;
+}
+.btn6home{
+  display: inline-block;
+}
+/*espaçamento do carrossel*/
+
+.divempatia{
+  margin-left:10%;
+  margin-right:5%;
+  
+}
+.divseriedade{
+ margin-right:5%;
+ margin-left:5%;  
+}
+.divcuidado{
+  margin-left:5%;
+  margin-right:10%;
+}
+/*personalizando tamanho fonte e caixa do botão*/
+.btn1{
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+}
+.btn2{
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+}
+.btn3{
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+}
+.btn4{width: 200px;
+  height: 50px;
+  font-size: 20px;}
+  .btn5{
+    width: 200px;
+  height: 50px;
+  font-size: 20px;
+  }
+  .btn6{
+    width: 200px;
+  height: 50px;
+  font-size: 20px;
+  }
+  /*rodapé*/
+  .final{
+    display:grid;
+  position:absolute;
+background-color: white;
+  text-align: center;
+  margin-top:60%;
+  padding:0px;
+  width: 100%;
+  font-size: 30px;
+  }
