@@ -26,38 +26,38 @@ body{
   heught: 10%;
 }
 .formulario {
- display: flex;
+ display: inline-block;
  justify-content: center;
 align-items: center;
   
 }
 .botoes {
- display: flex;
+ display: inline-block;
  justify-content: center;
 align-items: center;
 }
 .botoesbaixos {
- display: flex;
+ display: inline-block;
  justify-content: center;
 align-items: center;
 }
 .btn3 {
- display: flex;
+ display: inline-block;
  justify-content: center;
 align-items: center;
 }
 .btn4 {
- display: flex;
+ display: inline-block;
  justify-content: center;
 align-items: center;
 }
 .btn5 {
- display: flex;
+ display: inline-block;
  justify-content: center;
 align-items: center;
 }
 .btn6 {
- display: flex;
+ display: inline-block;
  justify-content: center;
 align-items: center;
 }
