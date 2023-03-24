@@ -43,10 +43,26 @@ text-align: center;
 
   display: flex;
   justify-content: center;
+  
 }
 .final{
 background-color: white;
   text-align: center;
   
+  
 }
 
+
+.date{
+
+  min-width: 200px;
+min-height: 50px;
+font-size: 20px;
+
+}
+
+#opçoes{
+  min-width: 200px;
+  min-height: 50px;
+  font-size: 20px;
+}
