@@ -62,7 +62,11 @@ align-items: center;
 align-items: center;
 }
 .final {
+  display:grid;
+  position:absolute;
 background-color: white;
   text-align: center;
-  margin:0px;
+  margin-top:60%;
+  padding:0px;
+  width: 100%;
 }
