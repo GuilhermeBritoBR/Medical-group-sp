@@ -37,12 +37,11 @@ text-align: center;
   width: 10%;
   height: 10%;
 }
-/* RODAPÉ DO SITE*/
+/* Carrossel*/
 .centroimagem {
    display: inline-block;
-
 min-width: 504px;
-min-width: 3304px;
+min-height: 3304px;
   opacity: 80%;
   background: #002F75;
 }
@@ -85,12 +84,7 @@ font-size: 30px;
   
 }
 /* É O CARROSSEL DE IMAGENS*/
-.centroimagem{
-  
- display: inline-block;
-min-width: 504px;
-min-width: 3304px;
-}
+
 /* DIV QUE FICA A IMAGEM COM A DESCRISÃO "EMPATIA*/
 .divempatia{
   display: inline-block;
