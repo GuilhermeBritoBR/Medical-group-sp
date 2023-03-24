@@ -37,11 +37,33 @@ text-align: center;
   width: 10%;
   height: 10%;
 }
+<<<<<<< HEAD
 /* RODAPÉ DO SITE*/
+=======
+
+.centroimagem {
+  
+  opacity: 80%;
+  background: #002F75;
+ 
+ 
+
+}
+
+
+>>>>>>> a7abc6cf1f6e08c77e06057288d8fc533a25cf1c
 .final {
+  display:grid;
+  position:absolute;
 background-color: white;
   text-align: center;
+<<<<<<< HEAD
 margin-top:10px;
+=======
+  margin-top:60%;
+  padding:0px;
+  width: 100%;
+>>>>>>> a7abc6cf1f6e08c77e06057288d8fc533a25cf1c
 }
 /* CENTRO VAZIO COM O ESPAÇAMENTO ATÉ O RODAPÉ*/
 .centrovazio {
