@@ -30,44 +30,50 @@ body {
 }
 
 .formulario {
- 
+ text-aling: center;
   justify-content: center;
   align-items: center;
 
 }
 
 .botoes {
- 
+  text-aling: center;
+
   justify-content: center;
   align-items: center;
 }
 
 .botoesbaixos {
+ text-aling: center;
 
   justify-content: center;
   align-items: center;
 }
 
 .btn3 {
- 
+  text-aling: center;
+
   justify-content: center;
   align-items: center;
 }
 
 .btn4 {
+ text-aling: center;
 
   justify-content: center;
   align-items: center;
 }
 
 .btn5 {
+ text-aling: center;
 
   justify-content: center;
   align-items: center;
 }
 
 .btn6 {
- 
+  text-aling: center;
+
   justify-content: center;
   align-items: center;
 }
