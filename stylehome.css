@@ -115,10 +115,9 @@ min-width: 3304px;
     .imagenshome{  
       opacity: 80%;
       background: #002F75;
-/* min-height:504px;
-min-width:3304px; */
-min-width: 67%;
-  min-height: 67%;
+      min-height:504px;
+min-width:3304px; 
+
     
     }
     /*IMAGEM MAIOR QUE AS OUTRAS DO CARROSEL POR ISSO A MODIFICAÇÃO*/
