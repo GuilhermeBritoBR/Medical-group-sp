@@ -39,7 +39,10 @@ text-align: center;
 }
 /* RODAPÉ DO SITE*/
 .centroimagem {
-  
+   display: inline-block;
+
+min-width: 504px;
+min-width: 3304px;
   opacity: 80%;
   background: #002F75;
 }
