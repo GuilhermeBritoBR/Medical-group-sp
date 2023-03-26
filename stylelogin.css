@@ -30,53 +30,105 @@ body {
 }
 
 .formulario {
- text-aling: center;
+ text-align: center;
   justify-content: center;
   align-items: center;
+  min-width: 200px;
+min-height: 50px;
+font-size: 20px;
+
 
 }
+.btn1{
+  min-width: 200px;
+min-height: 50px;
+font-size: 20px;
 
+}
+.btn2{
+  min-width: 200px;
+min-height: 50px;
+font-size: 20px;
+
+}
+.botaologin{
+  min-width: 200px;
+min-height: 50px;
+font-size: 20px;
+
+}
 .botoes {
-  text-aling: center;
+  text-align: center;
 
   justify-content: center;
   align-items: center;
+  min-width: 200px;
+min-height: 50px;
+font-size: 20px;
+
 }
 
 .botoesbaixos {
- text-aling: center;
+ text-align: center;
 
   justify-content: center;
   align-items: center;
+  min-width: 200px;
+min-height: 50px;
+font-size: 20px;
+
 }
 
 .btn3 {
-  text-aling: center;
+  text-align: center;
 
   justify-content: center;
   align-items: center;
+  min-width: 200px;
+min-height: 50px;
+font-size: 20px;
+
 }
 
 .btn4 {
- text-aling: center;
+ text-align: center;
 
   justify-content: center;
   align-items: center;
+  min-width: 200px;
+min-height: 50px;
+font-size: 20px;
+
 }
 
 .btn5 {
- text-aling: center;
+ text-align: center;
 
   justify-content: center;
   align-items: center;
+  min-width: 200px;
+min-height: 50px;
+font-size: 20px;
+
 }
 
 .btn6 {
-  text-aling: center;
+  text-align: center;
 
   justify-content: center;
   align-items: center;
+  min-width: 200px;
+min-height: 50px;
+font-size: 20px;
+
 }
+.Caixa{
+  min-width: 200px;
+  min-height: 50px;
+  font-size: 20px;
+}
+
+
 
 .final {
   display: grid;
