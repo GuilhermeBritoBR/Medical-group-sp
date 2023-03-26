@@ -71,18 +71,18 @@ margin-top:10px;
 .seriedade{
 font-size: 30px;
   color:white;
-  text-align: 
+  text-align: ;
 }
 /* É O TEXTO DESCRISÃO DA IMAGEM"RESPEITO*/
 .respeito{
  color:white;
  font-size: 30px;
- right:;
+ right: ;
 }
 /* É A DIV COM AS DESCRISÕES DAS IMAGENS*/
-.texto{
+
   
-}
+
 /* É O CARROSSEL DE IMAGENS*/
 
 /* DIV QUE FICA A IMAGEM COM A DESCRISÃO "EMPATIA*/
@@ -111,8 +111,6 @@ font-size: 30px;
       background: #002F75;
       min-height:504px;
 min-width:3304px; 
-
-    
     }
     /*IMAGEM MAIOR QUE AS OUTRAS DO CARROSEL POR ISSO A MODIFICAÇÃO*/
     .cuidadoimg{
