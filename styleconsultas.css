@@ -22,7 +22,7 @@ border-width: 0px;
 
 
 .titulo1{
-  color:white;
+  color: white;
   text-align: center;
 }
 .titulo2 {
@@ -40,6 +40,7 @@ justify-content: center;
 min-width: 100px;
 min-height: 200px;
   font-size: 50px;
+    text-align: center;
 }
   .final {
   background-color: white;
