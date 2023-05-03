@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width">
   <title>SP MEDICAL GROUP</title>
   <link href="stylelogin.css" rel="stylesheet" type="text/css" />
+  <script src="validacao.js"></script>
 </head>
 
 <body>
@@ -34,24 +35,24 @@ SP MEDICAL GROUP
   </button> 
 
    <br>
- </div>
+
 
    <div class="formulario">
  
-  <form >
 
-<p></p>    <input type="e-mail" name="email" placeholder="Digite seu e-mail" class="Caixa">    
 
-<P></P>   <input type="password" name="senha" placeholder= "Digite sua senha" value="*******" class="Caixa">
+<p></p>    <input type="e-mail" name="email" id= "user" placeholder="Digite seu e-mail ou CPF" class="Caixa">    
 
-  </form>
-   </div>
+<P></P>   <input id="senha" type="password"  name="senha"  placeholder= "Digite sua senha" value="*******" class="Caixa">
+<p></p>   <input id="cpf" type="number" name="cpf" placeholder="Digite seu CPF:" class="Caixa">
+
+   
 
   <div class= "botoes es">
- <form>
-    <p></p>  <input type="submit" name="Login" value="Entrar" class="botaologin">
-  </form>
-  
+
+    <p></p>  <button onclick="senha()"   value="Entrar" class="botaologin"> Entrar</button>
+
+  </div>
 
  <button class="btn5">
 
