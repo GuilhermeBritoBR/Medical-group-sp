@@ -57,6 +57,19 @@ body{
     border: solid 1px #48649c;
     border-radius: 8px;
     font-size: 36px;
+    cursor: pointer;
+}
+.button-azul:hover{
+    display: inline-block;
+    background-color: #1b408a;
+    width: 300px;
+    height: 90px;
+    color:#ffffff;
+    border: solid 1px #48649c;
+    border-radius: 8px;
+    font-size: 36px;
+    cursor: pointer;
+    box-shadow: 0.0em 0.0em 0.4em #48649c;
 }
 .secao-botoes{
     margin-top: 50px;
@@ -67,16 +80,36 @@ body{
     height: 70px;
     width: 80px;
 }
+
 .botao-diferenciado{
     height: 120px;
     width: 128px;
     border: solid 4px #48649c;
     border-radius: 16px;
+    cursor: pointer;
+
+}
+.botao-diferenciado:hover{
+    height: 125px;
+    width: 132px;
+    border: solid 4px #48649c;
+    border-radius: 16px;
+    cursor: pointer;
+   
 }
 .botao-img{
     padding:20px;
     border: solid 4px #48649c;
     border-radius: 16px;
+    cursor: pointer;
+
+}
+.botao-img:hover{
+    padding:30px;
+    border: solid 4px #48649c;
+    border-radius: 16px;
+    cursor: pointer;
+
 }
 .botao-calendario, .botao-agendamentos, .botao-medicos, .botao-resultados, .botao-planos{
     display: inline-block;
@@ -117,4 +150,106 @@ footer{
 .instagram-div, .facebook-div, .zap-div{
     display: inline-block;
 }
-    
+.login-container{
+    text-align: center;
+}
+#email{
+    width: 300px;
+    height: 45px;
+    font-size: 24px;
+    border: solid 8px #ffffff;
+    border-radius: 12px;
+    margin-bottom: 40px;
+}
+#senha{
+    width: 300px;
+    height: 45px;
+    font-size: 24px;
+    border: solid 8px #ffffff;
+    border-radius: 12px;
+    margin-bottom: 40px;
+}
+#nome{
+    width: 300px;
+    height: 45px;
+    font-size: 24px;
+    border: solid 8px #ffffff;
+    border-radius: 12px;
+    margin-bottom: 40px;
+}
+#cpf{
+    width: 300px;
+    height: 45px;
+    font-size: 24px;
+    border: solid 8px #ffffff;
+    border-radius: 12px;
+    margin-bottom: 40px;
+}
+#data{
+    width: 300px;
+    height: 45px;
+    font-size: 24px;
+    border: solid 8px #ffffff;
+    border-radius: 12px;
+    margin-bottom: 40px;
+}
+.titulo-div{
+    font-size: 36px ;
+    margin:40px;
+    text-align: center;
+}
+.tabela-div{
+    font-size: 36px;
+    margin-top: 20px;
+    height: 500px;
+    background-color: #ffffff;
+    border: solid 1px #ffffff;
+    border-radius: 16px;
+}
+.none{
+    text-decoration: none;
+    color:#000000;
+}
+#dia{
+    width: 300px;
+    height: 45px;
+    font-size: 24px;
+    border: solid 8px #ffffff;
+    border-radius: 12px;
+    margin-bottom: 40px;
+}
+#paciente{
+    width: 300px;
+    height: 45px;
+    font-size: 24px;
+    border: solid 8px #ffffff;
+    border-radius: 12px;
+    margin-bottom: 40px;
+}
+#especialidade{
+    width: 300px;
+    height: 45px;
+    font-size: 24px;
+    border: solid 8px #ffffff;
+    border-radius: 12px;
+    margin-bottom: 40px;
+}
+#dor{
+    width: 300px;
+    height: 45px;
+    font-size: 24px;
+    border: solid 8px #ffffff;
+    border-radius: 12px;
+    margin-bottom: 40px;
+}
+.consulta-container{
+    text-align: center;
+}
+.titulo-div{
+    text-align: center;
+    margin-bottom:60px;
+}
+.container-titulo{
+    text-align: center;
+    margin-bottom: 60px;
+}

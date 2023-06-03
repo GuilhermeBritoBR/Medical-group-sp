@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>CADASTRO|MEDICAL GROUP SP</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        
+
+    </head>
+    <body>
+        <!---esse é o banner com todos os menus inclusive o de logar-->
+        <div class="banner-container">
+            <div class="logo-div">
+                <img src="assets/usuaria.png">
+            </div>
+            <div class="quadro-banner">
+                <div class="title-div">
+                    <h1 class="title">SP MEDICAL GROUP</h1>
+                </div>
+            </div>
+            <div class="botao-inicio">
+                <button class="button-azul">
+                    Início
+                </button>
+            </div>
+        </div>
+        <div class="container-titulo">
+        <titulo-div>
+            <h1>Agendamento</h1>
+        </titulo-div></div>
+        <div class="consulta-container">
+            <div class="nome-div">
+                <input id="paciente" type="text" placeholder="Digite seu nome:">
+            </div>
+            <div class="email-div">
+                <input  id="especialidade"type="text" placeholder="Digite a especialidade desejada:">
+            </div>
+            <div class="cpf-div">
+                <input id="dor" type="text" placeholder="Digite a dor ou intenção:">
+            </div>
+            <div class="data-div">
+                <input id="dia" type="date" placeholder="Selecione o dia desejado:">
+            </div>
+            <div class="botao-div">
+                <button onclick="consulta()" class="button-azul">Marcar</button>
+            </div>
+        </div>
+        <script>
+            function consulta(){
+            let paciente = document.getElementById("paciente").value;
+            let especialidade = document.getElementById("especialidade").value;
+            let problema = document.getElementById("dor").value;
+            let dia = document.getElementById("dia").value;
+            window.alert("Você marcou uma consulta no dia " + dia + " com a " + especialidade);
+        }
+        </script>
+    </body>
+    <footer>
+        <div class="div-endereço">
+            <h3>R Jacarandás, São Manoel,200, Nova Odessa,SP, Brasil</h3>
+        </div>
+        <div class="div-telefone"></div>
+        <h3>(19) 984456111</h3>
+        <div class="redes">
+            <div class="instagram-div">
+                <img src="assets/Instagram.png">
+            </div>
+            <div class="zap-div">
+                <img src="assets/Whatsapp.png">
+            </div>
+            <div class="facebook-div">
+                <img src="assets/Facebook.png">
+            </div>
+        </div>
+        <div class="email"></div>
+    </footer>
+</html>
