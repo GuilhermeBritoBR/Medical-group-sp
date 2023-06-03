@@ -1,105 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>LOGIN|MEDICAL GROUP SP</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script scr="script.js">
+            function validacao() {
+                var dados ={
+                    'usuarios': ['cleuza@gmail.com'],
+                    'senha': ['mari123'],
+                    'cpf': ['23987144403'],
+                }
+                var senha = document.getElementById("senha");
+            var users = document.getElementById("email");
+            if ( users.value == dados.usuarios[0])    
+            if ( senha.value == dados.senha[0])
+             {window.location.assign("user.html");
+                window.location.replace("user.html");
+            } else{
+                window.alert("Senha ou usuário incorretos");
+            } else{
+                window.alert("senha ou usuário incorretos");
+            }
+            }
+        </script>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>SP MEDICAL GROUP</title>
-  <link href="stylelogin.css" rel="stylesheet" type="text/css" />
-  <script src="validacao.js"></script>
-</head>
-
-<body>
-  <!--primeira divisao-->
-<div class="homepage">
-<img src="logo.png" class="logo">  
-  <h1 class="titulo1">
-SP MEDICAL GROUP
-   
-  </h1>
-</div>
- <div class="botoes">
-   <a href="index.html"> <button class="btn1">
-
-    Início
-  </button> </a>
-
-  <button class="btn2">
-
-    Administrador
-  </button>
-
-  <button class="btn3">
-
-    Médico
-  </button> 
-
-   <br>
-
-
-   <div class="formulario">
- 
-
- 
-<p></p>    <input type="e-mail" name="email" id= "user" placeholder="Digite seu e-mail:" class="Caixa">    
-<P></P>   <input id="senha" type="password"  name="senha"  placeholder= "Digite sua senha:" class="Caixa">
-<p></p>   <input id="cpf" type="number" name="cpf" placeholder="Digite seu CPF:" class="Caixa">
-
-   
-
-  <div class= "botoes es">
-
-    <p></p>  <button onclick="senha()"   value="Entrar" class="botaologin"> Entrar</button>
-
-  </div>
-
-<button class="btn5">
-
-
-   Esqueci senha
- </button>
-    </div>
-<div class="botoes cc">
-  <a href="cadastro.html"><button class="btn6">
-
-    Cadastrar
-  </button></a>
-  </div>
-
-
-
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-   <br>
-  <br>
-  <br>
-
-<footer class="final">
-    <h3><p>MedicalGroupSP@outlook.com.br</p>
-  <p>  (19) 984456111</p>
-  <p>R Jacarandás, São Manoel,200, Nova Odessa,SP, Brasil</p>
-    </h3>
-</footer>
-  </body>
+    </head>
+    <body>
+        <!---esse é o banner com todos os menus inclusive o de logar-->
+        <div class="banner-container">
+            <div class="logo-div">
+                <img src="assets/logo.png">
+            </div>
+            <div class="quadro-banner">
+                <div class="title-div">
+                    <h1 class="title">SP MEDICAL GROUP</h1>
+                </div>
+            </div>
+            <div class="botao-inicio">
+                <button class="button-azul">
+                    Início
+                </button>
+            </div>
+        </div>
+        <div class="login-container">
+            <div class="email-div">
+                <input  id="email"type="text" placeholder="Digite seu email:">
+            </div>
+            <div class="senha-div">
+                <input id="senha" type="password" placeholder="Digite sua senha:">
+            </div>
+            <div class="botao-div">
+                <button onclick="validacao()" class="button-azul">Entrar</button>
+            </div>
+        </div>
+    </body>
+    <footer>
+        <div class="div-endereço">
+            <h3>R Jacarandás, São Manoel,200, Nova Odessa,SP, Brasil</h3>
+        </div>
+        <div class="div-telefone"></div>
+        <h3>(19) 984456111</h3>
+        <div class="redes">
+            <div class="instagram-div">
+                <img src="assets/Instagram.png">
+            </div>
+            <div class="zap-div">
+                <img src="assets/Whatsapp.png">
+            </div>
+            <div class="facebook-div">
+                <img src="assets/Facebook.png">
+            </div>
+        </div>
+        <div class="email"></div>
+    </footer>
 </html>

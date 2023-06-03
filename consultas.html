@@ -1,147 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>HOME|MEDICAL GROUP SP</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>SP MEDICAL GROUP</title>
-  <link href="styleconsultas.css" rel="stylesheet" type="text/css" />
-</head>
-
-<body>
-  <!--primeira divisao-->
-  <div class="homepage">
-    <img src="logo.png" class="logo">
-    <h1 class="titulo1">
-      SP MEDICAL GROUP
-  </div>
-  <div class="botoes">
-    </h1>
-
-
-    <button class="btn1">
-
-
-      Início
-
-    </button>
-
-    <button class="btn2">
-
-      Sair
-
-    </button>
-  </div>
-
-
-  <h1 class="titulo2">CONSULTAS</h1>
-  <div class="tabela">
-    <style>
-      tabela,
-      th,
-      td {
-        border: 1px solid black;
-        border-collapse: collapse;
-
-
-
-
-
-      }
-  
-    </style>
-    <table class="tabela">
-      <tr>
-        <div>
-          <th>Nome</th>
+    </head>
+    <body>
+        <!---esse é o banner com todos os menus inclusive o de logar-->
+        <div class="banner-container">
+            <div class="logo-div">
+                <img src="assets/usuaria.png">
+            </div>
+            <div class="quadro-banner">
+                <div class="title-div">
+                    <h1 class="title">SP MEDICAL GROUP</h1>
+                </div>
+            </div>
+            <div class="botao-inicio">
+                <button class="button-azul">
+                    Início
+                </button>
+            </div>
+        
+        <div class="botao-login-div">
+            <button class="button-azul">
+                Sair
+            </button>
         </div>
-        <div>
-          <th>Dia</th>
         </div>
-        <div>
-          <th>Horário</th>
+        <div class="consultas-container">
+            <div class="titulo-div">
+                <h1>Consultas</h1>
+            </div>
+            <div class="tabela-div">
+                <div class="result-div">
+                    <p id="dia"></p><br>
+                    <p id="hora"></p><br>
+                    <p id="especialidade"></p><br>
+                    <p id="medico"></p><br>
+                </div>
+            </div>
         </div>
-       <div>
-        <th>Especialidade</th>
-       </div>
-       <div>
-
-      
-       
-      </tr>
-      </div>
-      <tr>
-        <td>Maria</td>
-        <td>13/03/23</td>
-        <td>10:30 </td>
-        <td>Odontologia</td>
-      </tr>
-      <tr>
-        <td>João</td>
-        <td>15/03/23</td>
-        <td>14:00</td>
-        <td>Pediatria</td>
-
-
-
-      </tr>
-
-    </table>
-  </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <div class="centrovazio">
-    <p></p>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-  </div>
-  <div class="final">
-
-
-
-
-
-
-
-
-</body>
-
+    </body>
+    <footer>
+        <div class="div-endereço">
+            <h3>R Jacarandás, São Manoel,200, Nova Odessa,SP, Brasil</h3>
+        </div>
+        <div class="div-telefone"></div>
+        <h3>(19) 984456111</h3>
+        <div class="redes">
+            <div class="instagram-div">
+                <img src="assets/Instagram.png">
+            </div>
+            <div class="zap-div">
+                <img src="assets/Whatsapp.png">
+            </div>
+            <div class="facebook-div">
+                <img src="assets/Facebook.png">
+            </div>
+        </div>
+        <div class="email"></div>
+    </footer>
 </html>
