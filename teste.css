@@ -12,6 +12,7 @@ body{
     height: 1523px;
 }
 .areasuperior{
+    margin-top:50px;
     padding: 0px;
     position: relative;
 }
@@ -59,6 +60,7 @@ h1{
     border-style: none;
     font-size: 36px;
     color: #ffffff;
+    border-radius: 5px;
 }
 .botaoinicio{
     display: inline-block;

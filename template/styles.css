@@ -1,0 +1,120 @@
+html{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #E7E4E4;
+    font-family: 'Inter Regular';
+}
+@font-face {
+    font-family: 'Inter Regular';
+    src: url('assets/Inter-VariableFont_slnt,wght.ttf') format('truetype');
+}
+body{
+    width: 1366px;
+    background-color: #E7E4E4;
+}
+.title{
+    color: #ffffff;
+    font-size: 96px;
+}
+.banner-container{
+    display: inline-block;
+    position: relative;
+    width: 1366px;
+    height: 630px;
+}
+.quadro-banner{
+    display: inline-block;
+    width: 984px;
+    height: 384px;
+    background-color: #48649c;
+    border: solid 2px #48649c;
+    border-radius: 16px;
+}
+.title-div{
+    margin-left:14px;
+    margin-top: 144.5px;
+}
+.logo-div{
+    display: inline-block;
+    width: 368px;
+}
+.botao-inicio{
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.botao-login-div{
+    width: 300px;
+    height: 90px;
+}
+.button-azul{
+    display: inline-block;
+    background-color: #48649c;
+    width: 300px;
+    height: 90px;
+    color:#ffffff;
+    border: solid 1px #48649c;
+    border-radius: 8px;
+    font-size: 36px;
+}
+.secao-botoes{
+    margin-top: 50px;
+    width: 1366px;
+    text-align: center;
+}
+.dif{
+    height: 70px;
+    width: 80px;
+}
+.botao-diferenciado{
+    height: 120px;
+    width: 128px;
+    border: solid 4px #48649c;
+    border-radius: 16px;
+}
+.botao-img{
+    padding:20px;
+    border: solid 4px #48649c;
+    border-radius: 16px;
+}
+.botao-calendario, .botao-agendamentos, .botao-medicos, .botao-resultados, .botao-planos{
+    display: inline-block;
+    margin: 30px;
+}
+.secao-img{
+    margin-top: 100px;
+    background-color: #48649c;
+    text-align: center;
+    border: solid 8px #48649c;
+    border-radius: 12px;
+}
+.img-empatia, .img-cuidado, .img-seriedade{
+    display: inline-block;
+    width: 370px;
+    height: 225.6px;
+    margin:20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.cuidado, .seriedade, .empatia{
+    display: inline-block;
+    width: 370px;
+    height: 225.6px;
+}
+footer{
+    text-align: center;
+    width: 1366px;
+    height: 300px;
+    background-color: #ffffff;
+    margin-top: 300px;
+    color:#000000;
+    font-size: 24px;
+}
+.div-endereço{
+    border-top: solid 30px #ffffff;
+}
+.instagram-div, .facebook-div, .zap-div{
+    display: inline-block;
+}
+    
