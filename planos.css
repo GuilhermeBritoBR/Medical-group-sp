@@ -1,0 +1,44 @@
+*{
+  background-color: #E7E4E4;
+}
+body{
+  margin: 0px;
+}
+
+header{
+    background-color: #002F75;
+   opacity:80%;
+   height:100%;
+   width: 100%;
+}
+
+h3{
+  color: black;
+  text-align: center;
+}
+
+footer{
+      display:grid;
+    position:absolute;
+  background-color: white;
+    text-align: center;
+    margin-top:60%;
+    padding:0px;
+    width: 100%;
+    font-size: 30px;
+}
+
+#planind {
+  display: flex;
+  align-items: center;
+}
+
+#planfamil {
+  display: flex;
+  align-items: center;
+}
+
+#planemp {
+  display: flex;
+  align-items: center;
+}
