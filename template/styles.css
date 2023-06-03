@@ -247,9 +247,45 @@ footer{
 }
 .titulo-div{
     text-align: center;
-    margin-bottom:60px;
+    margin-bottom:30px;
+    
 }
 .container-titulo{
     text-align: center;
     margin-bottom: 60px;
+}
+.img-plan{
+    display: inline-block;
+    margin-left:20px;
+}
+.text-plan{
+    width: 760px;
+    padding:30px;
+}
+.titulo-planos-div{
+    text-align: center;
+}
+.planos-div{
+    margin-top: 40px;
+    text-align: center;
+    background-color: #ffffff;
+    width: 900px;
+    height: 620px;
+    border: solid 2px #ffffff;
+    border-radius: 20px;
+    display: inline-block;
+}
+.planos-div:hover{
+    margin-top: 40px;
+    text-align: center;
+    background-color: #ffffff;
+    width: 900px;
+    height: 620px;
+    border: solid 2px #ffffff;
+    border-radius: 20px;
+    display: inline-block;
+    box-shadow: 0.0em 0.0em 0.4em #000000;
+}
+.planos-container{
+    text-align: center;
 }
