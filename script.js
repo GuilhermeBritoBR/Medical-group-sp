@@ -38,9 +38,28 @@ function consulta()    {
         var dor = localStorage.getItem("dor");
         var especialidade = localStorage.getItem("especialidade");
         var dia = localStorage.getItem("dia");
-        var resultadotext = 'O ' + paciente + ' Marcou consulta no dia ' + dia + " com a " + especialidade + ' por estar com dor ' + dor;
+        var resultadotext = 'O ' + paciente + ' marcou consulta no dia ' + dia + " com a " + especialidade + ' por estar com ' + dor;
       var resultado = document.getElementById("resultado_consulta");
       resultado.innerText = resultadotext;
        
        
     }
+    function marcar()  {
+        var definidor = document.getElementById("definidor").value;
+        localStorage.setItem("problema", definidor );
+        window.alert("Seu diagnóstico foi salvo!");
+    }
+    function resultado()    {
+        let problema = localStorage.getItem("problema");
+        let print = document.getElementById("problema-resultado");
+        let result = "Seu diagnóstico: " + problema;
+        print.innerText = result;
+    }
+        function calendar()   {
+            var marcou = localStorage.getItem("marcou");
+            var text = document.getElementById("consulta1");
+            text.innerText = marcou;
+
+
+
+        }

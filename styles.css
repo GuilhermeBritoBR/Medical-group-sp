@@ -233,6 +233,7 @@ footer{
     border: solid 8px #ffffff;
     border-radius: 12px;
     margin-bottom: 40px;
+    
 }
 #dor{
     width: 300px;
@@ -354,5 +355,14 @@ footer{
     text-align: center;
 }
 .result-div-doctor{
+    text-align: center;
+}
+#consulta1, #consulta2, #consulta3 , #consulta4{
+    text-align: center;
+}
+#problema-resultado{
+    text-align: center;
+}
+#resultado_consulta{
     text-align: center;
 }
