@@ -4,10 +4,11 @@
         <meta charset="UTF-8">
         <title>CADASTRO|MEDICAL GROUP SP</title>
         <link rel="stylesheet" type="text/css" href="styles.css">
-        
 
     </head>
     <body>
+        
+
         <!---esse é o banner com todos os menus inclusive o de logar-->
         <div class="banner-container">
             <div class="logo-div">
@@ -49,18 +50,11 @@
                 <input id="dia" type="date" placeholder="Selecione o dia desejado:">
             </div>
             <div class="botao-div">
+                <script src="script.js"></script>
                 <button onclick="consulta()" class="button-azul">Marcar</button>
             </div>
         </div>
-        <script>
-            function consulta(){
-            let paciente = document.getElementById("paciente").value;
-            let especialidade = document.getElementById("especialidade").value;
-            let problema = document.getElementById("dor").value;
-            let dia = document.getElementById("dia").value;
-            window.alert("Você marcou uma consulta no dia " + dia + " com a " + especialidade);
-        }
-        </script>
+
     </body>
     <footer>
         <div class="div-endereço">
