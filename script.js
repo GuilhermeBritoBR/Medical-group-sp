@@ -4,6 +4,11 @@ function validacao() {
         'senha': ['mari123'],
         'cpf': ['23987144403'],
     }
+    localStorage.setItem("dados", dados)
+    var user_save = toString(dados.usuarios[0]);
+    var pass_save = toString(dados.senha[0]);
+    localStorage.setItem("pass_save", pass_save);
+    localStorage.setItem("user_save", user_save);
     var senha = document.getElementById("senha");
 var users = document.getElementById("email");
 if ( users.value == dados.usuarios[0])    
@@ -62,4 +67,14 @@ function consulta()    {
 
 
 
+        }
+        function admin()  {
+            let nome_text = document.getElementById("user_print");
+            let senha_text = document.getElementById("senha_print");
+            let user = localStorage.getItem("user_save");
+            let pass = localStorage.getItem("pass_save");
+            let result_user = "o/a " + user + " "+ pass;
+            nome_text.innerText= result_user;
+            document.getElementById("user_print").innerText= result_user;
+            
         }
