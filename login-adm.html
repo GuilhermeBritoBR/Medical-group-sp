@@ -8,7 +8,27 @@
 
     </head>
     <body>
-
+<script>
+    function validacao() {
+    var dados ={
+        'usuarios': ["admin"],
+        'senha': [ "admin"],
+        'cpf': ['23987144403'],
+    }
+    var senha = document.getElementById("senha");
+var users = document.getElementById("email");
+if ( users.value == dados.usuarios[0])    
+if ( senha.value == dados.senha[0])
+ {window.location.assign("admin/index.html");
+    window.location.replace("admin/index.html");
+ 
+} else{
+    window.alert("Senha ou usuário incorretos");
+} else{
+    window.alert("senha ou usuário incorretos");
+}
+}
+</script>
         <!---esse é o banner com todos os menus inclusive o de logar-->
         <div class="banner-container">
             <div class="logo-div">
@@ -27,7 +47,6 @@
             </div>
         </div>
         <div class="login-container">
-            <script src="script.js"></script>
             <div class="email-div">
                 <input  id="email"type="text" placeholder="Digite seu email:">
             </div>
@@ -37,10 +56,9 @@
             <div class="botao-div">
                 <button onclick="validacao()" class="button-azul">Entrar</button>
             </div>
-            <a href="cadastro.html" class="none"><button class="button-azul-cadastro-2">Cadastro</button></a>
-            <a href="login-adm.html" class="none"><button class="button-azul-cadastro-2">Administrador</button></a>
-            <a href="login-med.html" class="none"><button class="button-azul-cadastro-2">Médico</button></a>
-            
+            <a href="cadastro.html" class="none"><button class="button-azul-cadastro">Cadastro</button></a>
+           
+
         </div>
     </body>
     <footer>

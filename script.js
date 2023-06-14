@@ -1,20 +1,18 @@
 function validacao() {
     var dados ={
-        'usuarios': ['cleuza@gmail.com'],
-        'senha': ['mari123'],
+        'usuarios': ['cleuza@gmail.com', "admin"],
+        'senha': ['mari', "admin"],
         'cpf': ['23987144403'],
     }
-    localStorage.setItem("dados", dados)
-    var user_save = toString(dados.usuarios[0]);
-    var pass_save = toString(dados.senha[0]);
-    localStorage.setItem("pass_save", pass_save);
-    localStorage.setItem("user_save", user_save);
+    localStorage.setItem("dados", dados);
     var senha = document.getElementById("senha");
 var users = document.getElementById("email");
 if ( users.value == dados.usuarios[0])    
 if ( senha.value == dados.senha[0])
  {window.location.assign("user.html");
     window.location.replace("user.html");
+    localStorage.setItem("user", users).value;
+    localStorage.setItem("senha",  senha).value;
 } else{
     window.alert("Senha ou usuário incorretos");
 } else{
@@ -68,13 +66,18 @@ function consulta()    {
 
 
         }
-        function admin()  {
-            let nome_text = document.getElementById("user_print");
-            let senha_text = document.getElementById("senha_print");
-            let user = localStorage.getItem("user_save");
-            let pass = localStorage.getItem("pass_save");
-            let result_user = "o/a " + user + " "+ pass;
-            nome_text.innerText= result_user;
-            document.getElementById("user_print").innerText= result_user;
-            
+        
+        function admin() {
+            var dados ={
+                'usuarios': ['cleuza@gmail.com'],
+                'senha': ['mari'],
+                'cpf': ['23987144403'],
+            }
+         var userPrint = document.getElementById("user_print");
+         var senha_print = document.getElementById("senha_print");
+         let senha = localStorage.getItem("senha");
+         senha_print.textContent= "Senhas: " + dados.senha[0];
+         var result_text = "Usuários: " + dados.usuarios[0];
+         userPrint.textContent = result_text ;
         }
+        

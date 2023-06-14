@@ -302,6 +302,31 @@ footer{
     font-size: 36px;
     cursor: pointer;
 }
+.button-azul-cadastro-2{
+    margin-top: 20px;
+    display: inline-block;
+    background-color: #48649c;
+    width: 150px;
+    height: 45px;
+    color:#ffffff;
+    border: solid 1px #48649c;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.button-azul-cadastro-2:hover{
+    margin-top: 20px;
+    display: inline-block;
+    background-color: #1b408a;
+    width: 150px;
+    height: 45px;
+    color:#ffffff;
+    border: solid 1px #48649c;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0.0em 0.0em 0.4em #48649c;
+}
 .button-azul-cadastro:hover{
     margin-top: 20px;
     display: inline-block;
