@@ -24,8 +24,8 @@ function consulta()    {
     var dor = document.getElementById("dor").value;
     var dia = document.getElementById("dia").value;
     var especialidade = document.getElementById("especialidade").value;
-    var marcou = "Você marcou uma consulta no dia " + dia + "com a " + especialidade + "!";
-    window.alert("Você marcou uma consulta no dia " + dia + "com a " + especialidade + "!");
+    var marcou = "Você marcou uma consulta no dia " + dia + " com a " + especialidade + "!";
+    window.alert("Você marcou uma consulta no dia " + dia + " com a " + especialidade + "!");
     localStorage.setItem("marcou", marcou);
     localStorage.setItem('dia', dia);
    localStorage.setItem('paciente', paciente);
@@ -41,7 +41,7 @@ function consulta()    {
         var dor = localStorage.getItem("dor");
         var especialidade = localStorage.getItem("especialidade");
         var dia = localStorage.getItem("dia");
-        var resultadotext = 'O ' + paciente + ' marcou consulta no dia ' + dia + " com a " + especialidade + ' por estar com ' + dor;
+        var resultadotext = 'O/A ' + paciente + ' marcou consulta no dia ' + dia + " com a " + especialidade + ' por estar com dor no ' + dor;
       var resultado = document.getElementById("resultado_consulta");
       resultado.innerText = resultadotext;
        
