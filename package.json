@@ -1,0 +1,23 @@
+{
+  "name": "medical-group-sp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuilhermeBritoBR/Medical-group-sp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GuilhermeBritoBR/Medical-group-sp/issues"
+  },
+  "homepage": "https://github.com/GuilhermeBritoBR/Medical-group-sp#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
