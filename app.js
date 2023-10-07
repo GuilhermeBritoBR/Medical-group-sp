@@ -51,7 +51,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 function cadastro(){
 
-
+ 
   return validação();
 }
 return cadastro();

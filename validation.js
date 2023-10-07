@@ -1,7 +1,15 @@
 function validação(){
 
-console.log("Brito é lindo, a conexão com o cadastro foi introduzida");
+console.log("Aleluia, A conexão com o cadastro foi introduzida");
 //para verificar o funcionamento pelo terminal
-}
 
-module.exports = validação;
+}
+function coleta(){
+    var user = document.getElementById("nome");
+    var password = document.getElementById("senha");
+    
+
+}
+//não trocar virgula pois funciona, teste
+module.exports = validação , coleta;
+
