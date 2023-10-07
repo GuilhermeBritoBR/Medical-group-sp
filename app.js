@@ -34,29 +34,29 @@ app.listen(port, () => {
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/');
-  
+
   });
   app.use(express.static('html'));
   app.use(express.static('css')); 
-
-
- app.use(express.static('html'));
- app.use(express.static('css')); 
-
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true })); 
 
 ///////////até aqui não remover é para a vizualição;
 
-function cadastro(){
-
- 
+function cadastro(onclick){
+ app.get('/', (req, res) => {
+  db.query("INSERT INTO medical (user, senha) VALUES (username, passoword) ", (err,result) => {
+    res.send(result);
+  })
+ })
+  
   return validação();
 }
 return cadastro();
 
 //// conexão ativa 
+
 
 
 

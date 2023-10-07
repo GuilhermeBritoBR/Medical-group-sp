@@ -5,8 +5,8 @@ console.log("Aleluia, A conexão com o cadastro foi introduzida");
 
 }
 function coleta(){
-    var user = document.getElementById("nome");
-    var password = document.getElementById("senha");
+    var username = document.getElementById("nome").value;
+    var password = document.getElementById("senha").value;
     
 
 }
