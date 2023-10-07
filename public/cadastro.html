@@ -27,6 +27,7 @@
         </div>
         <div class="login-container">
             <script src="../app.js"></script>
+            <form action="/cadastro" method="post">
             <div class="nome-div">
                 <input id="nome" type="text" placeholder="Digite seu nome:" required>
             </div>
@@ -43,8 +44,9 @@
                 <input id="data" type="date" placeholder="Digite sua data de nascimento:" required>
             </div>
             <div class="botao-div">
-                <button onclick="coleta()" class="button-azul">Cadastrar</button>
+                <button type="submit" class="button-azul">Cadastrar</button>
             </div>
+            </form>
         
         </div>
     </body>

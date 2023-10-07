@@ -44,6 +44,7 @@
     "mime-types": "^2.1.35",
     "ms": "^2.0.0",
     "mysql": "^2.18.1",
+    "mysql2": "^3.6.1",
     "negotiator": "^0.6.3",
     "object-inspect": "^1.12.3",
     "on-finished": "^2.4.1",
@@ -71,7 +72,6 @@
     "utils-merge": "^1.0.1",
     "vary": "^1.1.2"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
