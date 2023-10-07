@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <title>CADASTRO|MEDICAL GROUP SP</title>
-        <link rel="stylesheet" type="text/css" href="styles.css">
-        
 
-    </head>
-    <body>
-        <!---esse é o banner com todos os menus inclusive o de logar-->
-        <div class="banner-container">
-            <div class="logo-div">
-                <img src="assets/logo.png">
+<head>
+    <meta charset="UTF-8">
+    <title>CADASTRO|MEDICAL GROUP SP</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+
+</head>
+
+<body>
+    <!---esse é o banner com todos os menus inclusive o de logar-->
+    <div class="banner-container">
+        <div class="logo-div">
+            <img src="assets/logo.png">
+        </div>
+        <div class="quadro-banner">
+            <div class="title-div">
+                <h1 class="title">SP MEDICAL GROUP</h1>
             </div>
-            <div class="quadro-banner">
-                <div class="title-div">
-                    <h1 class="title">SP MEDICAL GROUP</h1>
-                </div>
-            </div>
-            <div class="botao-inicio">
-                <a href="index.html" class="none">
+        </div>
+        <div class="botao-inicio">
+            <a href="index.html" class="none">
                 <button class="button-azul">
                     Início
                 </button></a>
-            </div>
         </div>
-        <div class="login-container">
-            <script src="../app.js"></script>
-            <form action="/cadastro" method="post">
+    </div>
+    <div class="login-container">
+        <!-- <script src="../app.js"></script> -->
+        <form action="/cadastro" method="post">
             <div class="nome-div">
-                <input id="nome" type="text" placeholder="Digite seu nome:" required>
+                <input id="nome" type="name" placeholder="Digite seu nome:" required>
             </div>
             <div class="email-div">
-                <input  id="email"type="text" placeholder="Digite seu email:" required>
+                <input id="email" type="text" placeholder="Digite seu email:" required>
             </div>
             <div class="senha-div">
                 <input id="senha" type="password" placeholder="Digite sua senha:" required>
@@ -46,10 +48,10 @@
             <div class="botao-div">
                 <button type="submit" class="button-azul">Cadastrar</button>
             </div>
-            </form>
-        
-        </div>
-    </body>
+        </form>
+
+    </div>
+
     <footer>
         <div class="div-endereço">
             <h3>R Jacarandás, São Manoel,200, Nova Odessa,SP, Brasil</h3>
@@ -69,4 +71,6 @@
         </div>
         <div class="email"></div>
     </footer>
+</body>
+
 </html>
