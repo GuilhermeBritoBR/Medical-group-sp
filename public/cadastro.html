@@ -26,24 +26,26 @@
             </div>
         </div>
         <div class="login-container">
+            <form action="/cadastrar" method="post">
             <div class="nome-div">
-                <input id="nome" type="text" placeholder="Digite seu nome:">
+                <input id="nome" type="text" placeholder="Digite seu nome:" required>
             </div>
             <div class="email-div">
-                <input  id="email"type="text" placeholder="Digite seu email:">
+                <input  id="email"type="text" placeholder="Digite seu email:" required>
             </div>
             <div class="senha-div">
-                <input id="senha" type="password" placeholder="Digite sua senha:">
+                <input id="senha" type="password" placeholder="Digite sua senha:" required>
             </div>
             <div class="cpf-div">
-                <input id="cpf" type="text" placeholder="Digite seu CPF:">
+                <input id="cpf" type="text" placeholder="Digite seu CPF:" required>
             </div>
             <div class="data-div">
-                <input id="data" type="date" placeholder="Digite sua data de nascimento:">
+                <input id="data" type="date" placeholder="Digite sua data de nascimento:" required>
             </div>
             <div class="botao-div">
                 <button onclick="cadastro()" class="button-azul">Cadastrar</button>
             </div>
+        </form>
         </div>
     </body>
     <footer>

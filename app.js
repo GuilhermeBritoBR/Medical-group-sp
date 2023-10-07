@@ -1,31 +1,28 @@
 
-var express = require("express");
-var mysql = require('mysql');
+const express = require('express');
+const mysql = require('mysql');
 const app = express();
-const port = 3000; 
+const bodyParser = require('body-parser');
+const port = 3000;
+const cadastration = require('./validation.js');
+app.use(express.static('html'));
+app.use(express.static('css'));
+
+
+app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.post('/cadastrar', (req, res) => {
+  const { email, senha } = req.body;
+  const resultado = cadastration(email, senha);
+  res.send(resultado);
+});
 
 app.get('/', (req, res) => {
-res.sendFile(__dirname + '/index.html');
-
-});
-app.use(express.static(__dirname+'/'));
-
-app.listen(port, () => {
-console.log(`Servidor Express está rodando na porta ${port}`);
-});
-
-var con = mysql.createConnection({
-    host: "localhost",
-    user: "phpmyadmin",
-    password: "flamengo"
+  res.sendFile(__dirname + '/index.html');
+  
   });
- 
+  
 
-con.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-  con.query("CREATE DATABASE mydb", function (err, result) {
-    if (err) throw err;
-    console.log("Database created");
-  });
-});
+
+app.listen(3000);
