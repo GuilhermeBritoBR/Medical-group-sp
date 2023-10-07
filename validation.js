@@ -1,6 +1,7 @@
-//função de cadastramento de clientes
- module.exports.cadastration = function() {
-   window.alert("teste");
-    
+function validação(){
 
+console.log("Brito é lindo, a conexão com o cadastro foi introduzida");
+//para verificar o funcionamento pelo terminal
 }
+
+module.exports = validação;
