@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CADASTRO|MEDICAL GROUP SP</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+
+</head>
+
+<body>
+    <!---esse é o banner com todos os menus inclusive o de logar-->
+    <div class="banner-container">
+        <div class="logo-div">
+            <img src="assets/logo.png">
+        </div>
+        <div class="quadro-banner">
+            <div class="title-div">
+                <h1 class="title">SP MEDICAL GROUP</h1>
+            </div>
+        </div>
+        <div class="botao-inicio">
+            <a href="index.html" class="none">
+                <button class="button-azul">
+                    Início
+                </button></a>
+        </div>
+    </div>
+    <div class="login-container">
+        <!-- <script src="../app.js"></script> -->
+        <form action="/cadastro" method="post">
+            <div class="nome-div">
+                <input id="nome" type="text" placeholder="Digite seu nome:" required>
+            </div>
+            <div class="email-div">
+                <input id="email" type="text" placeholder="Digite seu email:" required>
+            </div>
+            <div class="senha-div">
+                <input id="senha" type="password" placeholder="Digite sua senha:" required>
+            </div>
+            <div class="cpf-div">
+                <input id="cpf" type="text" placeholder="Digite seu CPF:" required>
+            </div>
+            <div class="data-div">
+                <input id="data" type="date" placeholder="Digite sua data de nascimento:" required>
+            </div>
+            <div class="botao-div">
+                <button type="submit" class="button-azul" >Cadastrar</button>
+            </div>
+        </form>
+
+    </div>
+
+    <footer>
+        <div class="div-endereço">
+            <h3>R Jacarandás, São Manoel,200, Nova Odessa,SP, Brasil</h3>
+        </div>
+        <div class="div-telefone"></div>
+        <h3>(19) 984456111</h3>
+        <div class="redes">
+            <div class="instagram-div">
+                <img src="assets/Instagram.png">
+            </div>
+            <div class="zap-div">
+                <img src="assets/Whatsapp.png">
+            </div>
+            <div class="facebook-div">
+                <img src="assets/Facebook.png">
+            </div>
+        </div>
+        <div class="email"></div>
+    </footer>
+</body>
+
+</html>
