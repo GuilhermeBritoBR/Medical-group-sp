@@ -83,8 +83,9 @@ app.post('/cadastro', (req, res) => {
       console.error('Erro ao cadastrar o usuário:', err);
       res.status(500).send('Erro ao cadastrar o usuário.');
     } else {
+      res.redirect('/user');
       console.log('Usuário cadastrado com sucesso!');
-      res.status(200).send('Usuário cadastrado com sucesso.');
+      
     }
   });
 });
