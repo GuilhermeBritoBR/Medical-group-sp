@@ -127,5 +127,5 @@ app.get('/login', (req, res) => {
  
   app.get('/hrefcadastro', (req, res) => {
     res.render('cadastro');
-    ras.render();
+  
   });

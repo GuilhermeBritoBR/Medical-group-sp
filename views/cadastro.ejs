@@ -29,28 +29,15 @@
         </div>
     </div>
     <div class="login-container">
-        <!-- <script src="../app.js"></script> -->
         <form action="/cadastro" method="post">
-            <div class="nome-div">
-                <input id="nome" type="text" placeholder="Digite seu nome:" required>
-            </div>
-            <div class="email-div">
-                <input id="email" type="text" placeholder="Digite seu email:" required>
-            </div>
-            <div class="senha-div">
-                <input id="senha" type="password" placeholder="Digite sua senha:" required>
-            </div>
-            <div class="cpf-div">
-                <input id="cpf" type="text" placeholder="Digite seu CPF:" required>
-            </div>
-            <div class="data-div">
-                <input id="data" type="date" placeholder="Digite sua data de nascimento:" required>
-            </div>
-            <div class="botao-div">
-                <button type="submit" class="button-azul" >Cadastrar</button>
-            </div>
-
-        </form>
+    
+            <input type="text" name="nome" id="nome" placeholder="Nome" required><br><br>
+            
+            <input type="email" name="email" id="email" placeholder="Email" required><br><br>
+            
+            <input type="password" name="senha" id="senha" placeholder="Senha" required><br><br>
+            <input class="button-azul" type="submit" value="Cadastrar">
+          </form>
 
     </div>
 
