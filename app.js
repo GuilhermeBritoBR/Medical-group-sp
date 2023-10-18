@@ -139,3 +139,8 @@ app.get('/login', (req, res) => {
     res.render('cadastro');
   
   });
+  //AQUI VOU INTRODUZIR SALVAMENTO DE INFORMAÇÕES validantion PELA users.ejs do admin
+  //rota na qual vou introduzir EJS de agendamentos
+  app.get('/users', (req, res) => {
+    res.render('users');
+  });
