@@ -22,19 +22,19 @@ db.connect((err) => {
   }
 });
 //bom este database serve para conexões internas, como exemp, o agendamento e exames
-const agendamento = mysql.createConnection({
+/* const agendamento = mysql.createConnection({
   host: 'localhost',
   user: 'phpmyadmin',
   password: 'flamengo',
   database: 'internaldb'
-})
-agendamento.connect((err) => {
+}) */
+/* agendamento.connect((err) => {
   if (err) {
     console.error('Erro ao conectar ao banco de dados:', err);
   } else {
     console.log('Conexão com o banco de dados estabelecida com sucesso!');
   }
-});
+}); */
 //esta parte serve para vizualizar os arquivos extensionados em .ejs, sem isso não nada funciona !!!!!!!!
 app.set('view engine', 'ejs');
 
@@ -51,6 +51,7 @@ app.use(express.static('public'));
 //aqui as configurações das extensões essencias para o servidor
 app.use(express.urlencoded( {extended: true }));
 app.use(express.json());
+
 
 
 //lembrar que o app.get ser para carregar coisas ou criar rotas em href nos html <a href="/cadastrohref"> POR EXEMPLO
@@ -80,7 +81,7 @@ app.use(express.static('views'));
 app.get('/user', (req, res) => {
   res.render('user'); 
   app.use(express.static('views'));
-  ras.render('styles.css');
+  res.render('styles.css');
   });
   
 // Rota de cadastro e sistema de cadastramento funcional NÃO REMOVER ESSENCIAL
@@ -100,7 +101,7 @@ app.post('/cadastro', (req, res) => {
   });
 });
 //Aqui tambem para renderizar a userpage pós validação
-app.get('/views/user', (req, res) => {
+app.get('/user', (req, res) => {
   res.render('user');
   
 });
@@ -116,19 +117,31 @@ app.get('/login', (req, res) => {
     
     db.query(query, [nome, senha], (err, result) => {
       if (err) {
-        console.error('Erro ao verificar o login:', err);
-        res.status(500).send('Erro ao verificar o login.');
+          console.error('Erro ao verificar o login:', err);
+          res.status(500).send('Erro ao verificar o login.');
       } else if (result.length > 0) {
-        
-        console.log('Login bem-sucedido!');
-        
-        res.redirect('/user');
+          // O login foi bem-sucedido, obtenha o valor "type" do resultado.
+          const userType = result[0].type;
+          
+          // Redirecione com base no valor de "type".
+          switch (userType) {
+              case 'Administrador':
+                  res.redirect('/administrador');
+                  break;
+              case 'Doctor':
+                  res.redirect('/doctor');
+                  break;
+              default:
+                  console.log('Tipo de usuário desconhecido');
+                  res.redirect('/user');
+                  break;
+          }
       } else {
-        console.log('Credenciais inválidas');
-        res.status(401).send('Credenciais inválidas.');
+          console.log('Credenciais inválidas');
+          res.status(401).send('Credenciais inválidas.');
       }
-    });
   });
+});
  //AQUI TAMBEM server para carregar pagina de login
   app.get('/views/login', (req, res) => {
     res.render('login');
@@ -139,8 +152,45 @@ app.get('/login', (req, res) => {
     res.render('cadastro');
   
   });
+    //appset caminho para a pasta admin
+    
   //AQUI VOU INTRODUZIR SALVAMENTO DE INFORMAÇÕES validantion PELA users.ejs do admin
   //rota na qual vou introduzir EJS de agendamentos
-  app.get('/users', (req, res) => {
-    res.render('users');
+  app.get('/administrador', (req, res) => {
+    
+    res.render('../views/admin/users');
+    
+
   });
+
+//method que o ADMIN VIZUALIZA TUDO!!!!!!!!!!!!!!!!!
+
+///////cadastro pelo adm
+app.post('/cadadmin', (req, res) => {
+  const { nome, senha, email, type } = req.body;
+  const query = 'INSERT INTO tabela (nome, senha, email, type) VALUES (?, ?, ?, ?)';
+  db.query(query, [nome, senha, email, type], (err, result) => {
+    if (err) {
+      console.error('Erro ao cadastrar o usuário:', err);
+      res.status(500).send('Erro ao cadastrar o usuário.');
+    } else {
+      console.log('Usuário cadastrado com sucesso!');
+      res.redirect('/administrador');
+    }
+  });
+});
+//rota pra controle do adm
+app.get('/controle', (req,res)=>{
+  res.render('admin/controle');
+})
+
+app.post('/controle', (req,res)=>{
+  const sql = "SELECT nome, email, senha, types FROM tabela";
+  const nome = results[0].nome;
+  const email = results[0].email;
+  const senha = results[0].senha;
+  const types = results[0].types;
+
+  
+
+});

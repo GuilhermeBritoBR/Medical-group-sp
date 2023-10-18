@@ -7,9 +7,9 @@
         
 
     </head>
-    <body onload="admin()">
+    <body >
         <!---esse é o banner com todos os menus inclusive o de logar-->
-        <script src="../script.js"></script>
+        
         <div class="banner-container">
             <div class="logo-div">
                 <img src="">
@@ -35,42 +35,28 @@
         </div>
         <div class="consultas-container">
             <div class="titulo-div">
-                <h1>Resultados</h1>
+                <h1>Cadastrar Usuários</h1>
             </div>
-            <div class="tabela-div">
-                <!-------------------->
-                <table>
-                <!--PRIMEIRA LINHA--->    
-                <tr name="linha">
-                    <!--PRIMEIRA BLOCO DE USERS-->
-                    <td name="users">
-                        <select id="users_select" name="select_users">
-                            <option value="users_value"></option>
-                        </select>
-                    </td>
-                    <!--segundo bloco de SENHA!!!!!!!!!!!!!!!!!!!!!!!-->
-                    <td name="password">
-                        <select id="password_select" name="select_password">
-                            <option value="password_value"></option>
-                        </select>
-                    </td>
-                    <!--terceiro BLOCO DE EMAILS!!!!!!!!!!!!!!!!!!!!!!-->
-                    <td name="mails">
-                        <select id="mails_select" name="select_mails">
-                            <option value="mails_value"></option>
-                        </select>
-                    </td>
-                    <!--QUARTO BLOCO DE TIPOS !!!!!!!!!!!!!!!!!!!!!!!!!--->
-                    <td name="types">
-                        <select id="types_select" name="select_types">
-                            <option value="types_value"></option>
-                        </select>
-                    </td>
+            <!-- <div class="tabela-div"> -->
+                <div class="login-container">
+                <form action="/cadadmin" method="post">
+            
+                    <input type="text" name="nome" id="nome" placeholder="Nome" required><br><br>
+                    
+                    <input type="email" name="email" id="email" placeholder="Email" required><br><br>
+                    <select id="especialidade" name="type">
 
-                </tr>
-
-                </table>
-                </div>
+                        <option>Administrador</option>
+                        <option>Leitor</option>
+                        <option >Doutor</option>
+                    </select><br><br>
+                    <input type="password" name="senha" id="senha" placeholder="Senha" required><br><br>
+                    <input class="button-azul" type="submit" value="Cadastrar">
+                  </form>
+        
+            </div>
+              </div>
+              
             </div>
         </div>
     </body>
