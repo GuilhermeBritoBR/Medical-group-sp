@@ -88,7 +88,7 @@ app.get('/user', (req, res) => {
 //lembrar que o DB QUERY só funciona se no HTML estiver sinalizado os marcadores <Name ="nome"> POR EXEMPLO
 app.post('/cadastro', (req, res) => {
   const { nome, senha, email } = req.body;
-  const query = 'INSERT INTO tabela (nome, senha, email) VALUES (?, ?, ?)';
+  const query = 'INSERT INTO tabela (nome, senha, email, type) VALUES (?, ?, ? , "Leitor")';
   db.query(query, [nome, senha, email], (err, result) => {
     if (err) {
       console.error('Erro ao cadastrar o usuário:', err);
@@ -170,16 +170,36 @@ app.get('/view',(req,res)=>{
   res.render('./admin/vies.ejs');
 })
 //method que o ADMIN VIZUALIZA TUDO!!!!!!!!!!!!!!!!!
-app.post('/viewadmin',(req,res)=>{
-const body = 'SELECT (nome , senha , email , type) FROM tabela;';
-const nome = req.body.nome;
-const senha = req.body.senha;
-const email = req.body.email;
-const type = req.body.type;
-res.render('admin/vies', { nome, senha, email, type });
-console.log({ nome, senha, email, type });
+/* app.post('/viewadmin',(req,res)=>{
+  var sql = 'SELECT * FROM tabela WHERE nome = ? AND senha = ? AND email = ? AND type = ?;';
+  
 
-})
+  const nome = req.sql;
+const senha = req.sql;
+const email = req.sql;
+const type = req.sql; 
+
+
+
+res.render('admin/vies', { nome, senha, email, type });
+console.log({ nome, senha, email, type }); 
+}) */
+
+
+
+db.connect();
+app.get('/viewadmin', (req, res) => {
+  db.query('SELECT nome , senha, email, type  FROM tabela', (err, rows) => {
+      if (err) throw err;
+      res.render('admin/vies', { data: rows });
+  });
+});
+
+
+
+
+
+
 ///////cadastro pelo adm
 app.post('/cadadmin', (req, res) => {
   const { nome, senha, email, type } = req.body;
@@ -221,5 +241,7 @@ app.post('/descadadmin', (req, res) => {
       console.log('Usuário deletado com sucesso!');
       res.redirect('/administrador');
     }
-  });
+  })
 });
+
+//////////SISTEMA DE CONSULTAS MASTER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

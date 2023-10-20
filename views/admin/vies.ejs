@@ -1,16 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sua Página EJS</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <title>Exemplo Node.js + MySQL</title>
 </head>
-<body >
+<body>
+    <div class="banner-container">
+            <div class="logo-div">
+                <img src="assets/logo.png">
+            </div>
+            <div class="quadro-banner">
+                <div class="title-div">
+                    <h1 class="title">SP MEDICAL GROUP</h1>
+                </div>
+            </div>
+            <div class="botao-inicio">
+                <a  class="none" href="user.html">
+                <button class="button-azul">
+                    Início
+                </button> </a>
+            </div>
+            <div class="botao-login-div">
+                <a  class="none" href="index.html">
+                <button class="button-azul">
+                    Sair
+                </button></a>
+            </div>
+        </div>
+        <div class="container-tabela">
+    <h1>Dados dos usuários</h1>
     
-    <p>Nome: <%= nome %></p>
-    <p>Senha: <%= senha %></p>
-    <p>Email: <%= email %></p>
-    <p>Type: <%= type %></p>
-
-
-
+    <table class="table-div">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Senha</th>
+                <th>Email</th>
+                <th>Tipo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.forEach(function(row) { %>
+                <tr>
+                    <td><%= row.nome %></td>
+                    <td><%= row.senha %></td>
+                    <td><%= row.email %></td>
+                    <td><%= row.type %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
 </body>
+<footer>
+    <div class="div-endereço">
+        <h3>R Jacarandás, São Manoel,200, Nova Odessa,SP, Brasil</h3>
+    </div>
+    <div class="div-telefone"></div>
+    <h3>(19) 984456111</h3>
+    <div class="redes">
+        <div class="instagram-div">
+            <img src="assets/Instagram.png">
+        </div>
+        <div class="zap-div">
+            <img src="assets/Whatsapp.png">
+        </div>
+        <div class="facebook-div">
+            <img src="assets/Facebook.png">
+        </div>
+    </div>
+    <div class="email"></div>
+</footer>
 </html>

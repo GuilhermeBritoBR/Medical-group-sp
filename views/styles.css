@@ -396,3 +396,17 @@ footer{
 #resultado_consulta{
     text-align: center;
 }
+.table-div{
+    text-align: center;
+    border: solid 3px #000;
+    display: inline-block;
+    padding: 70px;
+    background-color: #fff;
+    border-radius: 35px;
+    font-size: 16px;
+
+}
+.container-tabela{
+    text-align: center;
+    margin-bottom: 100px;
+}
