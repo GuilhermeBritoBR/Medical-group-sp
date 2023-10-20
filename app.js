@@ -110,7 +110,10 @@ app.get('/user', (req, res) => {
 app.get('/login', (req, res) => {
     res.render('login');
   });
-  
+  //rota para index do admin
+  app.get('/index_admin',(req,res)=>{
+    res.render('./admin/index.ejs');
+  });
   app.post('/login', (req, res) => {
     const { nome, senha } = req.body;
     const query = 'SELECT * FROM tabela WHERE nome = ? AND senha = ?';
@@ -126,10 +129,10 @@ app.get('/login', (req, res) => {
           // Redirecione com base no valor de "type".
           switch (userType) {
               case 'Administrador':
-                  res.redirect('/administrador');
+                  res.redirect('/index_admin');
                   break;
               case 'Doctor':
-                  res.redirect('/doctor');
+                  res.redirect('/index_doctor');
                   break;
               default:
                   console.log('Tipo de usuário desconhecido');
@@ -162,9 +165,21 @@ app.get('/login', (req, res) => {
     
 
   });
-
+//rota que leva a página de vizualição
+app.get('/view',(req,res)=>{
+  res.render('./admin/vies.ejs');
+})
 //method que o ADMIN VIZUALIZA TUDO!!!!!!!!!!!!!!!!!
+app.post('/viewadmin',(req,res)=>{
+const body = 'SELECT (nome , senha , email , type) FROM tabela;';
+const nome = req.body.nome;
+const senha = req.body.senha;
+const email = req.body.email;
+const type = req.body.type;
+res.render('admin/vies', { nome, senha, email, type });
+console.log({ nome, senha, email, type });
 
+})
 ///////cadastro pelo adm
 app.post('/cadadmin', (req, res) => {
   const { nome, senha, email, type } = req.body;
@@ -193,4 +208,18 @@ app.post('/controle', (req,res)=>{
 
   
 
+});
+//SISTEMA DE DESCADRAMENTO
+app.post('/descadadmin', (req, res) => {
+  const { nome, senha, email, type } = req.body;
+  const query = 'DELETE FROM tabela WHERE nome = ? AND senha = ? AND email = ? AND type = ?';
+  db.query(query, [nome, senha, email, type], (err, result) => {
+    if (err) {
+      console.error('Erro ao deletar o usuário:', err);
+      res.status(500).send('Erro ao deletar o usuário.');
+    } else {
+      console.log('Usuário deletado com sucesso!');
+      res.redirect('/administrador');
+    }
+  });
 });

@@ -152,6 +152,11 @@ footer{
 }
 .login-container{
     text-align: center;
+    display: block;
+}
+.login-container-revers{
+    display: none;
+    text-align: center;
 }
 #email{
     width: 300px;
