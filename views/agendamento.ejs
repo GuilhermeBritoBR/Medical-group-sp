@@ -2,7 +2,7 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <title>CADASTRO|MEDICAL GROUP SP</title>
+        <title>Agendamento|MEDICAL GROUP SP</title>
         <link rel="stylesheet" type="text/css" href="styles.css">
 
     </head>
@@ -12,7 +12,7 @@
         <!---esse é o banner com todos os menus inclusive o de logar-->
         <div class="banner-container">
             <div class="logo-div">
-                <img src="assets/usuaria.png">
+                <img src="assets/logo.png">
             </div>
             <div class="quadro-banner">
                 <div class="title-div">
@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="botao-inicio">
-                <a  class="none" href="user.html">
+                <a  class="none" href="/user">
                 <button class="button-azul">
                     Início
                 </button> </a>
@@ -37,11 +37,15 @@
             <h1>Agendamento</h1>
         </titulo-div></div>
         <div class="consulta-container">
+            <form action="/consulta" method="post">
             <div class="nome-div">
-                <input id="paciente" type="text" placeholder="Digite seu nome:">
+                <input id="paciente" name="nome" type="text" placeholder="Digite seu nome:">
+            </div>
+            <div class="nome-div">
+                <input id="paciente" name="idade" type="number" placeholder="Sua idade:">
             </div>
             <div class="select-div">
-                <select id="especialidade" placeholder="Selecione a especialidade desejada:">
+                <select name="especialidade" id="especialidade" placeholder="Selecione a especialidade desejada:">
                     <option value="Pediatría">Pediatría</option>
                     <option value="Cardiologista">Cardiologista</option>
                     <option value="Odontologia">Odontologia</option>
@@ -56,15 +60,30 @@
                 </select>
             </div>
             <div class="cpf-div">
-                <input id="dor" type="text" placeholder="Digite a dor ou intenção:">
+                <input name="motivo" id="dor" type="text" placeholder="Digite a dor ou intenção:">
             </div>
             <div class="data-div">
-                <input id="dia" type="date" placeholder="Selecione o dia desejado:">
+                <input name="dia" id="dor" type="text" placeholder="Selecione o dia desejado:">
+            </div>
+            <div class="data-div">
+                <input name="hora" id="dia" type="time" placeholder="Selecione a hora desejada:">
+            </div>
+            <div class="data-div">
+                <select name="deficiencia" id="especialidade" placeholder="Você possuí alguma deficiência:">
+                    <option value="Mental">Mental</option>
+                    <option value="Física">Física</option>
+                    <option value="Nenhuma">Nenhuma</option>
+                  
+
+
+
+                </select>
             </div>
             <div class="botao-div">
-                <script src="script.js"></script>
-                <button onclick="consulta()" class="button-azul">Marcar</button>
+                
+                <button type="submit" class="button-azul">Marcar</button>
             </div>
+        </form>
         </div>
 
     </body>

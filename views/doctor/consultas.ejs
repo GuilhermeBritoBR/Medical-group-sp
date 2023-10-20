@@ -5,14 +5,14 @@
         <title>HOME|MEDICAL GROUP SP</title>
         <link rel="stylesheet" type="text/css" href="../styles.css">
     </head>
-    <body onload="vil()">
+    <body >
         <script>
 
         </script>
         <!---esse é o banner com todos os menus inclusive o de logar-->
         <div class="banner-container">
             <div class="logo-div">
-                <img src="../assets/doctor.png">
+                <img src="../assets/logo.png">
             </div>
             <div class="quadro-banner">
                 <div class="title-div">
@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="botao-inicio">
-                <a  class="none" href="index.html">
+                <a  class="none" href="index_doctor">
                 <button class="button-azul">
                     Início
                 </button> </a>
@@ -39,8 +39,38 @@
             </div>
             <div class="tabela-div">
                 <div class="result-div">
-                        <script src="../script.js"></script>
-                    <p id="resultado_consulta"></p><br>
+                      
+                    <div class="container">
+                        
+                        <table class="table-div-consulta">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Idade</th>
+                                    <th>Especialidade</th>
+                                    <th>Motivo</th>
+                                    <th>Dia</th>
+                                    <th>Hora</th>
+                                    <th>Deficiencia</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% data.forEach(function(row) { %>
+                                    <tr>
+                                        <td><%= row.nome %></td>
+                                        <td><%= row.idade %></td>
+                                        <td><%= row.especialidade %></td>
+                                        <td><%= row.motivo %></td>
+                                        <td><%= row.dia %></td>
+                                        <td><%= row.hora %></td>
+                                        <td><%= row.deficiencia %></td>
+                                    </tr>
+                                <% }); %>
+                            </tbody>
+                        </table>
+                    </div>
+               
+            </div>
                   
                 </div>
             </div>

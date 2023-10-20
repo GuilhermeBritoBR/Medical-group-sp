@@ -114,6 +114,12 @@ app.get('/login', (req, res) => {
   app.get('/index_admin',(req,res)=>{
     res.render('./admin/index.ejs');
   });
+  //rota para voltar para index do adm
+
+  app.get('/index_admin_volta',(req,res)=>{
+    res.render('./admin/index.ejs');
+  });
+  ////////
   app.post('/login', (req, res) => {
     const { nome, senha } = req.body;
     const query = 'SELECT * FROM tabela WHERE nome = ? AND senha = ?';
@@ -131,7 +137,7 @@ app.get('/login', (req, res) => {
               case 'Administrador':
                   res.redirect('/index_admin');
                   break;
-              case 'Doctor':
+              case 'Doutor':
                   res.redirect('/index_doctor');
                   break;
               default:
@@ -245,3 +251,65 @@ app.post('/descadadmin', (req, res) => {
 });
 
 //////////SISTEMA DE CONSULTAS MASTER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//OUTRO BANCO DE DADOS COM NOVA CONEXÃO
+const interno = mysql.createConnection({
+  host: 'localhost',
+  user: 'phpmyadmin',
+  password: 'flamengo',
+  database: 'Interno',
+});
+//sem o db conect, o servidor não é ativado, lembrar-se 
+interno.connect((err) => {
+  if (err) {
+    console.error('Erro ao conectar ao banco de dados:', err);
+  } else {
+    console.log('Conexão com o banco de dados INTERNO estabelecida com sucesso!');
+  }
+});
+//vamos la, vou capturar os dados de agendamento do paciente
+//rota para isso
+app.get('/agendamento',(req,res)=>{
+  res.render('./agendamento');
+});
+app.post('/consulta',(req,res)=>{
+  const { nome, idade, especialidade, motivo , dia , hora, deficiencia } = req.body;
+  const query = 'INSERT INTO Pacientes (nome, idade, especialidade, motivo, dia, hora, deficiencia) VALUES (?, ?, ?, ? , ? , ?, ?)';
+  interno.query(query, [nome, idade, especialidade, motivo, dia, hora, deficiencia], (err, result) => {
+    if (err) {
+      console.error('Erro ao cadastrar consulta:', err);
+      res.status(500).send('Erro ao cadastrar consulta.');
+    } else {
+      console.log('Consulta cadastrada com sucesso!');
+      res.redirect('/user');
+    }
+  })
+})
+///rota para consultas do lado do médico
+app.get('/agendamentorota',(req,res)=>{
+  res.render('doctor/consultas');
+});
+///vizualização das consultas
+interno.connect();
+app.get('/agendamentoview', (req, res) => {
+  interno.query('SELECT nome , idade, especialidade, motivo, dia, hora, deficiencia  FROM Pacientes', (err, rows) => {
+      if (err) throw err;
+      res.render('doctor/consultas', { data: rows });
+  });
+});
+
+
+
+//////////////////////////////////
+////ROTAS!!!!!!!!!!!!!!!!
+//rota de user para ver consultas marcadas
+app.get('/consultas',(req,res)=>{
+  res.render('./consultas');
+});
+///rota para consultas do adm
+app.get('/consultashtml',(req,res)=>{
+  res.render('admin/consultas');
+});
+///rota para medicos
+app.get('/index_doctor',(req,res)=>{
+  res.render('doctor/index');
+});
