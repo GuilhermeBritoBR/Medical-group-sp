@@ -7,45 +7,50 @@
         
 
     </head>
-    <body onload="calendar()">
+    <body>
         <!---esse é o banner com todos os menus inclusive o de logar-->
-        <div class="banner-container">
-            <div class="logo-div">
-                <img src="assets/logo.png">
-            </div>
-            <div class="quadro-banner">
-                <div class="title-div">
-                    <h1 class="title">SP MEDICAL GROUP</h1>
-                </div>
-            </div>
-            <div class="botao-inicio">
-                <a  class="none" href="/user">
-                <button class="button-azul">
-                    Início
-                </button> </a>
-            </div>
-        
-        <div class="botao-login-div">
-            <a  class="none" href="index.html">
-            <button class="button-azul">
-                Sair
-            </button> </a>
-        </div>
-        </div>
-        <div class="consultas-container">
-            <div class="titulo-div">
-                <h1>Consultas</h1>
-            </div>
-            <div class="tabela-div">
-                <div class="result-div">
-                    <script src="script.js"></script>
-                    <p id="consulta1"></p><br>
-                    <p id="consulta2"></p><br>
-                    <p id="consulta3"></p><br>
-                    <p id="consulta4"></p><br>
-                </div>
-            </div>
-        </div>
+        <%- include('header-logado'); %>
+
+        <style>
+            .table-div-consulta{
+                background-color: #fff;
+                padding: 50px;
+                border: solid 1px #fff;
+                border-radius:16px;
+display: inline-block;            }
+            .consultas-container{
+                text-align: center;
+            }
+        </style>
+<div class="consultas-container">
+    <h1>Suas consultas</h1>
+        <table class="table-div-consulta">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Especialidade</th>
+                    <th>Motivo</th>
+                    <th>Dia</th>
+                    <th>Hora</th>
+                    <th>Deficiencia</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% dados.forEach(function(row) { %>
+                    <tr>
+                        <td><%= row.nome %></td>
+                        <td><%= row.idade %></td>
+                        <td><%= row.especialidade %></td>
+                        <td><%= row.motivo %></td>
+                        <td><%= row.dia %></td>
+                        <td><%= row.hora %></td>
+                        <td><%= row.deficiencia %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
     </body>
     <footer>
         <div class="div-endereço">

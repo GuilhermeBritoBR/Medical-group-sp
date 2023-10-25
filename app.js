@@ -302,9 +302,9 @@ app.get('/agendamentoview', (req, res) => {
 //////////////////////////////////
 ////ROTAS!!!!!!!!!!!!!!!!
 //rota de user para ver consultas marcadas
-app.get('/consultas',(req,res)=>{
+/* app.get('/consultas',(req,res)=>{
   res.render('./consultas');
-});
+}); */
 ///rota para consultas do adm
 app.get('/consultashtml',(req,res)=>{
   res.render('admin/consultas');
@@ -312,4 +312,36 @@ app.get('/consultashtml',(req,res)=>{
 ///rota para medicos
 app.get('/index_doctor',(req,res)=>{
   res.render('doctor/index');
+});
+//sistema para o usuário vizualizar suas própias consultas
+interno.connect();
+app.get('/consultas', (req, res) => {
+  interno.query('SELECT nome , idade, especialidade, motivo, dia, hora, deficiencia  FROM Pacientes', (err, rows) => {
+      if (err) throw err;
+      res.render('consultas', { data: rows });
+  });
+});
+//rota para ir para a página que seleciona a consulta
+app.get('/selectconsultas',(req,res)=>{
+  res.render('select_consulta');
+
+});
+app.post('/select',(req,res)=>{
+ const{nome} = req.body;
+ const SQL = 'SELECT * FROM Pacientes WHERE nome = ?';
+ interno.query(SQL, [nome] ,(err,result)=>{
+  if(err){
+    console.error('Erro ao verificar o login:', err);
+    res.status(500).send('Erro ao verificar.');
+  }else{
+    const query = 'SELECT * FROM Pacientes WHERE nome = ?';
+    interno.query(query, [nome ], (err,row)=>{
+      if(err)throw err;
+      console.log(row)
+      res.render('consultas.ejs',{dados: row});
+  });
+    
+  }
+  
+ })
 });

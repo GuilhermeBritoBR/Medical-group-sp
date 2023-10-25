@@ -1,0 +1,26 @@
+<table class="table-div-consulta">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Especialidade</th>
+            <th>Motivo</th>
+            <th>Dia</th>
+            <th>Hora</th>
+            <th>Deficiencia</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% data.forEach(function(row) { %>
+            <tr>
+                <td><%= row.nome %></td>
+                <td><%= row.idade %></td>
+                <td><%= row.especialidade %></td>
+                <td><%= row.motivo %></td>
+                <td><%= row.dia %></td>
+                <td><%= row.hora %></td>
+                <td><%= row.deficiencia %></td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>
