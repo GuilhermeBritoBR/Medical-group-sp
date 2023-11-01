@@ -5,7 +5,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const port = 7000;
 //devo lembrar que o mysql deve ser sempre o 2, utilizar o maria db para manejamento de dados
-
+//Grupo: Antunes, Brito, MATHEUS E MILENA
 //este database serve para a validação e cadastro do usuario
 const db = mysql.createConnection({
   host: 'localhost',
