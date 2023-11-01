@@ -10,22 +10,31 @@
 <div class="container">
 
 
-<tbody>
+    <table class="table-div-consulta">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Tipo</th>
+                <th>Data</th>
+                <th>Horário</th>
+                <th>Obs:</th>
+          
+            </tr>
+        </thead>
+        <tbody>
+            <% data.forEach(function(row) { %>
+                <tr>
+                    <td><%= row.nome %></td>
+                    <td><%= row.type %></td>
+                    <td><%= row.data %></td>
+                    <td><%= row.horas %></td>
+                    <td><%= row.obs %></td>
+                    
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
 
-<table>
-
-
-
-
-
-    
-</table>
-
-
-
-
-
-</tbody>
 
 
 

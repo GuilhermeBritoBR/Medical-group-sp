@@ -384,6 +384,7 @@ border-radius: 16px;
     border: solid 8px #ffffff;
     border-radius: 12px;
     margin-bottom: 40px;
+    display: block;
 }
 .consulta-container-doctor{
     text-align: center;
@@ -424,6 +425,9 @@ td, th{
 .container-td{
     margin:0px;
 }
-.input-system{
-    height: 30px;
+.container-exames{
+    text-align: center;
+}
+.form-exames{
+    display: inline-block;
 }

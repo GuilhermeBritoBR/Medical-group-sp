@@ -380,6 +380,29 @@ app.post('/system_exames',(req,res)=>{
   }) 
 });
 ///rota para levar para a página de exames do usuário!!!!!!!!!!!!!!!!!
-app.get('exames_user',(req,res)=>{
+app.get('/exames_user',(req,res)=>{
+  res.render('select-user');
+});
+///sistema para vizualizar os exames pelo usuário
+app.post('/select_user_exame',(req,res)=>{
+  const SQL = 'SELECT * FROM Exames WHERE nome = ?';
+  const {nome} =req.body;
+  interno.query(SQL,[nome],(err,result)=>{
+    if(err){
+      console.log("erro ao selecionar nome ");
+      res.sendStatus(251, "Nome não existente!");
+    }else{
+      const query = 'SELECT * FROM Exames WHERE nome =  ?';
+      interno.query(SQL, [nome], (err,row)=>{
+        if(err)throw err;
+        console.log(row);
+        res.render('exames-user.ejs',{data: row})});
+     
+      
+    }
+  })
+});
+//rota para página de exames do usuario
+app.get('/exames-user',(req,res)=>{
   res.render('exames-user');
-})
+});
