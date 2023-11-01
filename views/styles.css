@@ -402,7 +402,7 @@ border-radius: 16px;
 }
 .table-div{
     text-align: center;
-    border: solid 3px #000;
+    border: solid 3px #fff;
     display: inline-block;
     
     background-color: #fff;
@@ -423,4 +423,7 @@ td, th{
 }
 .container-td{
     margin:0px;
+}
+.input-system{
+    height: 30px;
 }

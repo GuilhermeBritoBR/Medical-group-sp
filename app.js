@@ -294,6 +294,7 @@ app.get('/agendamentoview', (req, res) => {
   interno.query('SELECT nome , idade, especialidade, motivo, dia, hora, deficiencia  FROM Pacientes', (err, rows) => {
       if (err) throw err;
       res.render('doctor/consultas', { data: rows });
+      
   });
 });
 
@@ -306,6 +307,13 @@ app.get('/agendamentoview', (req, res) => {
   res.render('./consultas');
 }); */
 ///rota para consultas do adm
+app.get('/consultashtml', (req, res) => {
+  interno.query('SELECT nome , idade, especialidade, motivo, dia, hora, deficiencia  FROM Pacientes', (err, rows) => {
+      if (err) throw err;
+      res.render('admin/consultas', { data: rows });
+      
+  });
+});
 app.get('/consultashtml',(req,res)=>{
   res.render('admin/consultas');
 });
@@ -345,3 +353,33 @@ app.post('/select',(req,res)=>{
   
  })
 });
+//rota para ir para resultados do médico no DOCTOR!!!!!!!!!!!!!!!
+app.get('/resultados_doctor',(req,res)=>{
+  res.render('doctor/resultados_doctor');
+});
+
+
+
+///rota para acessar exames do médico
+app.get('/exames_doctor',(req,res)=>{
+  res.render('doctor/exames');
+})
+app.post('/system_exames',(req,res)=>{
+  const SQL = 'INSERT into Exames (nome, type , data, horas, obs) VALUES (?,?,?,?,?);';
+  const {nome,type,data,horas,obs} = req.body;
+  console.log({nome,type,data,horas,obs});
+  interno.query(SQL, [nome, type,data,horas,obs], (err,result)=>{
+  if(err){
+    console.log("Erro em inserir dados de exame!");
+    res.sendStatus(251),("Erro ao inserir dados de exame!");
+  }else{
+    res.redirect('/index_doctor');
+  }
+  
+  
+  }) 
+});
+///rota para levar para a página de exames do usuário!!!!!!!!!!!!!!!!!
+app.get('exames_user',(req,res)=>{
+  res.render('exames-user');
+})

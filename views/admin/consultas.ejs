@@ -36,14 +36,44 @@
             <div class="titulo-div">
                 <h1>Consultas</h1>
             </div>
-            <div class="tabela-div">
-                <div class="result-div">
-                    <script src="../script.js"></script>
-                    <p id="resultado_consulta"></p><br>
-                    <p id="consulta2"></p><br>
-                    <p id="consulta3"></p><br>
-                    <p id="consulta4"></p><br>
-                </div>
+            <style>
+                .table-div-consulta{
+                    background-color: #fff;
+                    border: 1px solid #fff;
+                    padding: 80px;
+                    border-radius: 25px;
+                    display: inline-block;
+                    text-align: center;
+
+                    
+                }
+            </style>
+            <table class="table-div-consulta">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Idade</th>
+                        <th>Especialidade</th>
+                        <th>Motivo</th>
+                        <th>Dia</th>
+                        <th>Hora</th>
+                        <th>Deficiencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% data.forEach(function(row) { %>
+                        <tr>
+                            <td><%= row.nome %></td>
+                            <td><%= row.idade %></td>
+                            <td><%= row.especialidade %></td>
+                            <td><%= row.motivo %></td>
+                            <td><%= row.dia %></td>
+                            <td><%= row.hora %></td>
+                            <td><%= row.deficiencia %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table> </div>
             </div>
         </div>
     </body>

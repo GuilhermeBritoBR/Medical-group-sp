@@ -2,9 +2,8 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <title>HOME|MEDICAL GROUP SP</title>
+        <title>Resultados|MEDICAL GROUP SP</title>
         <link rel="stylesheet" type="text/css" href="../styles.css">
-        
 
     </head>
     <body>
@@ -19,46 +18,31 @@
                 </div>
             </div>
             <div class="botao-inicio">
-                <a  class="none" href="index.html">
+                <a  class="none" href="/index_doctor">
                 <button class="button-azul">
                     Início
-                </button> </a>
+                </button></a>
             </div>
         
         <div class="botao-login-div">
             <a  class="none" href="../index.html">
             <button class="button-azul">
                 Sair
-            </button> </a>
+            </button></a>
         </div>
         </div>
-        <div class="consultas-container">
+        <div class="consultas-container-doctor">
             <div class="titulo-div">
-                <h1>Exames marcados</h1>
+                <h1>Resultados</h1>
             </div>
-            <div class="tabela-div">
-
-                <tr>
-                    <td>Paciente
-                        <div class="paciente"></div>
-                    </td> <br>
-                    <!--coluna do paciente-->
-                    <td>Horário
-                        <div class="horario"></div>
-                    </td> <br>
-                    <!--coluna do horario-->
-                    <td>Especialidade
-                        <div class="especialidade"></div>
-                    </td> <br>
-                    <!--coluna de especialidades-->
-                    <td>Check
-                        <div class="check"></div>
-                    </td> <br>
-                    <!--Coluna de cheklist-->
-
-                </tr>
-
-                
+            <div class="tabela-div-doctor">
+                <div class="result-div-doctor">
+                    
+                    
+                    <input type="text" id="definidor" class="input-persona"> 
+                    <br>
+                    <button class="button-azul" onclick="marcar()" >Definir</button> 
+                </div>
             </div>
         </div>
     </body>
