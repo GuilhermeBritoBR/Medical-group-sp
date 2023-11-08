@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <title>Exames</title>
+
+    </head>
+    <%- include('header-logado'); %>
+
+    <div class="container-result_exames">
+        <h1>Suas consultas:</h1>
+    <table class="table-div-consulta">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Type</th>
+                <th>Data</th>
+                <th>Horas</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <% data.forEach(function(row) { %>
+                <tr>
+                    <td><%= row.nome %></td>
+                    <td><%= row.type %></td>
+                    <td><%= row.data %></td>
+                    <td><%= row.horas %></td>
+                   
+                    
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    </div>
+    </body>
+
+<footer>
+<%- include('footer'); %>
+</footer>
+</html>

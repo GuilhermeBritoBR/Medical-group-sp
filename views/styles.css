@@ -431,3 +431,25 @@ td, th{
 .form-exames{
     display: inline-block;
 }
+form{
+    text-align: center;
+}
+.exames{
+    text-align: center;
+    display: inline-block;
+}
+.form_exa{
+    text-align: center;
+    display: inline-block;
+}
+.table-div-consulta{
+    background-color: #fff;
+    border: solid #fff 1px;
+    border-radius: 25px;
+    text-align: center;
+    padding: 50px;
+    display: inline-block;
+}
+.container-result_exames{
+    text-align: center;
+}

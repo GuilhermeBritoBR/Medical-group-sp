@@ -209,7 +209,7 @@ app.get('/viewadmin', (req, res) => {
 ///////cadastro pelo adm
 app.post('/cadadmin', (req, res) => {
   const { nome, senha, email, type } = req.body;
-  const query = 'INSERT INTO tabela (nome, senha, email, type) VALUES (?, ?, ?, ?)';
+  const query = "INSERT INTO tabela (nome, senha, email, type) VALUES (?,?,?, SHA2(?,256))";
   db.query(query, [nome, senha, email, type], (err, result) => {
     if (err) {
       console.error('Erro ao cadastrar o usuário:', err);
@@ -406,3 +406,30 @@ app.post('/select_user_exame',(req,res)=>{
 app.get('/exames-user',(req,res)=>{
   res.render('exames-user');
 });
+app.get('/back',(req,res)=>{
+
+  res.sendfile('../index.html');
+});
+//rota para chegar na página de buscar exames
+app.get('/result_exames',(req,res)=>{
+  res.render('resultados');
+});
+app.post('/definir_exames',(req,res)=>{
+  const SQL = 'SELECT * FROM Exames WHERE nome = ?';
+  const {nome} =req.body;
+  interno.query(SQL,[nome],(err,result)=>{
+    if(err){
+      console.log("erro ao selecionar nome ");
+      res.sendStatus(251, "Nome não existente!");
+    }else{
+      const query = 'SELECT * FROM Exames WHERE nome =  ?';
+      interno.query(SQL, [nome], (err,row)=>{
+        if(err)throw err;
+        console.log(row);
+        res.render('result_user.ejs',{data: row})});
+     
+      
+    }
+  })
+});
+
