@@ -18,6 +18,18 @@
                     <h1 class="title">SP MEDICAL GROUP</h1>
                 </div>
             </div>
+
+            <tbody>
+                <% data.forEach(function(result) { %>
+                    <tr>
+                       <h2 style="color:#48649c">Bem vindo(a) <%= result.nome %></h2>
+                        
+                    </tr>
+                <% }); %>
+            
+            </tbody>
+
+
             <div class="botao-inicio">
                 <a class="none" href="index.html">
                 <button class="button-azul">

@@ -79,7 +79,7 @@ app.use(express.static('views'));
 });
 //rota do href da pagina de login e cadastro pós validado para a de usuário
 app.get('/user', (req, res) => {
-  res.render('user'); 
+  res.render('user2'); 
   app.use(express.static('views'));
   res.render('styles.css');
   });
@@ -93,16 +93,26 @@ app.post('/cadastro', (req, res) => {
     if (err) {
       console.error('Erro ao cadastrar o usuário:', err);
       res.status(500).send('Erro ao cadastrar o usuário.');
+      
     } else {
-      res.redirect('/user');
-      console.log('Usuário cadastrado com sucesso!');
+      const SQL = 'SELECT * FROM tabela WHERE nome = ? ';
+      db.query(SQL, [nome], (err, result)=>{
+        if(err){
+          console.log('Erro no cadastro!');
+          res.status(500).send('Erro ao cadastrar o usuário.');
+        }else{
+          console.log('Usuário cadastrado com sucesso!');
+      res.render('user', {data:result});
+        }
+      })
+      ;
       
     }
   });
 });
 //Aqui tambem para renderizar a userpage pós validação
 app.get('/user', (req, res) => {
-  res.render('user');
+  res.render('user2');
   
 });
 //login
@@ -112,12 +122,12 @@ app.get('/login', (req, res) => {
   });
   //rota para index do admin
   app.get('/index_admin',(req,res)=>{
-    res.render('./admin/index.ejs');
+    res.render('./admin/index2.ejs');
   });
   //rota para voltar para index do adm
 
   app.get('/index_admin_volta',(req,res)=>{
-    res.render('./admin/index.ejs');
+    res.render('./admin/index2.ejs');
   });
   ////////
   app.post('/login', (req, res) => {
@@ -127,7 +137,8 @@ app.get('/login', (req, res) => {
     db.query(query, [nome, senha], (err, result) => {
       if (err) {
           console.error('Erro ao verificar o login:', err);
-          res.status(500).send('Erro ao verificar o login.');
+          
+          res.redirect('login', Error);
       } else if (result.length > 0) {
           // O login foi bem-sucedido, obtenha o valor "type" do resultado.
           const userType = result[0].type;
@@ -135,19 +146,20 @@ app.get('/login', (req, res) => {
           // Redirecione com base no valor de "type".
           switch (userType) {
               case 'Administrador':
-                  res.redirect('/index_admin');
+                  res.render('admin/index', {data:result});
                   break;
               case 'Doutor':
-                  res.redirect('/index_doctor');
+                  res.render('doctor/index', {data:result});
                   break;
               default:
                   console.log('Tipo de usuário desconhecido');
-                  res.redirect('/user');
+                  res.render('user', {data:result});
                   break;
           }
       } else {
           console.log('Credenciais inválidas');
-          res.status(401).send('Credenciais inválidas.');
+          
+          res.status(401).send('Credenciais inválidas');
       }
   });
 });
@@ -175,21 +187,7 @@ app.get('/login', (req, res) => {
 app.get('/view',(req,res)=>{
   res.render('./admin/vies.ejs');
 })
-//method que o ADMIN VIZUALIZA TUDO!!!!!!!!!!!!!!!!!
-/* app.post('/viewadmin',(req,res)=>{
-  var sql = 'SELECT * FROM tabela WHERE nome = ? AND senha = ? AND email = ? AND type = ?;';
-  
 
-  const nome = req.sql;
-const senha = req.sql;
-const email = req.sql;
-const type = req.sql; 
-
-
-
-res.render('admin/vies', { nome, senha, email, type });
-console.log({ nome, senha, email, type }); 
-}) */
 
 
 
@@ -280,7 +278,7 @@ app.post('/consulta',(req,res)=>{
       res.status(500).send('Erro ao cadastrar consulta.');
     } else {
       console.log('Consulta cadastrada com sucesso!');
-      res.redirect('/user');
+      res.redirect('/agendamento');
     }
   })
 })
@@ -319,7 +317,7 @@ app.get('/consultashtml',(req,res)=>{
 });
 ///rota para medicos
 app.get('/index_doctor',(req,res)=>{
-  res.render('doctor/index');
+  res.render('doctor/index2');
 });
 //sistema para o usuário vizualizar suas própias consultas
 interno.connect();
@@ -433,3 +431,11 @@ app.post('/definir_exames',(req,res)=>{
   })
 });
 
+app.get('/view_exames_all', (err,res)=>{
+  const SQL = 'SELECT * FROM Exames ';
+  interno.query(SQL,(err,row)=>{
+    if(err)throw err;
+    console.log(row);
+    res.render('doctor/resultados_doctor', {data:row});
+  })
+})

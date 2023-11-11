@@ -18,21 +18,11 @@
                     <h1 class="title">SP MEDICAL GROUP</h1>
                 </div>
             </div>
-            
-            <tbody>
-                <% data.forEach(function(result) { %>
-                    <tr>
-                       <h2 style="color:#48649c">Bem vindo(a) <%= result.nome %></h2>
-                        
-                    </tr>
-                <% }); %>
-            
-            </tbody>
-            
+
 
 
             <div class="botao-inicio">
-                <a class="none" href="/index_doctor">
+                <a class="none" href="index.html">
                 <button class="button-azul">
                     Início
                 </button> </a>
@@ -54,26 +44,49 @@
         </div>
         <div class="secao-botoes-doctor">
             <div class="botao-calendario">
-                <a class="none" href="/agendamentoview">
+                <a class="none" href="/consultashtml">
                 <button class="button-azul">
                 Consultas</button></a>
             </div>
+           
             <div class="botao-resultados">
-                <a class="none" href="/view_exames_all">
+                <a class="none" href="/administrador">
                 <button class="button-azul">
-                Exames </button></a>
+                Controle </button></a>
             </div>
+
+           <!--  <form action="/viewadmin" method="post"> -->
+
             <div class="botao-resultados">
-                <a class="none" href="/exames_doctor">
+                <a class="none" href="/viewadmin">
                 <button class="button-azul">
-                Marcar exame </button></a>
+                Listagem </button></a>
             </div>
-            <br>
-            <br>
-            <br>
+
+      <!--   </form> -->
+
+            </div>
+           
         </div>
     </body>
     <!----rodape com contato amgos-->
-    <%- include('../footer'); %>
-
+    <footer>
+        <div class="div-endereço">
+            <h3>R Jacarandás, São Manoel,200, Nova Odessa,SP, Brasil</h3>
+        </div>
+        <div class="div-telefone"></div>
+        <h3>(19) 984456111</h3>
+        <div class="redes">
+            <div class="instagram-div">
+                <img src="../assets/Instagram.png">
+            </div>
+            <div class="zap-div">
+                <img src="../assets/Whatsapp.png">
+            </div>
+            <div class="facebook-div">
+                <img src="../assets/Facebook.png">
+            </div>
+        </div>
+        <div class="email"></div>
+    </footer>
 </html>
