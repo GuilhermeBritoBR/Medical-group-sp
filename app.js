@@ -207,7 +207,8 @@ app.get('/viewadmin', (req, res) => {
 ///////cadastro pelo adm
 app.post('/cadadmin', (req, res) => {
   const { nome, senha, email, type } = req.body;
-  const query = "INSERT INTO tabela (nome, senha, email, type) VALUES (?,?,?, SHA2(?,256))";
+/*   "INSERT INTO tabela (nome, senha, email, type) VALUES (?,?,?, SHA2(?,256))"; */
+  const query = "INSERT INTO tabela (nome, senha, email, type) VALUES (?,?,?,?)";
   db.query(query, [nome, senha, email, type], (err, result) => {
     if (err) {
       console.error('Erro ao cadastrar o usuário:', err);
