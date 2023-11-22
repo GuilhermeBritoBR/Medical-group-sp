@@ -37,13 +37,13 @@
 <form method="post" action="/system_exames">
     <input  class="input-persona" type="text" placeholder="Digite o nome do paciente:" name="nome" required>
     <br>
-    <input class="input-persona" type="text" placeholder="Digite o tipo de exame:" name="type" required>
+    <input class="input-persona" type="text" placeholder="Digite o tipo de exame:" name="type" required max="20">
     <br>
     <input class="input-persona" type="text" placeholder="Observações:" name="data" required>
     <br>
     <input class="input-persona" type="date" placeholder="Selecione o horário exame:" name="horas" required>
     <br>
-    <input class="input-persona" type="time" placeholder="Digite qualquer observação:" name="obs">
+    <input class="input-persona" type="time" placeholder="Digite qualquer observação:" name="obs" max="40">
     <br>
     <input class="button-azul" type="submit" value="Marcar exame">
     <br>

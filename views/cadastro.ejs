@@ -27,8 +27,11 @@
             <input type="text" name="nome" id="nome" placeholder="Nome" required><br><br>
             
             <input type="email" name="email" id="email" placeholder="Email" required><br><br>
-            
-            <input type="password" name="senha" id="senha" placeholder="Senha" required><br><br>
+            <input type="text" name="cpf" id="cpf"  \
+			pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" \
+			title="Digite o seu CPF no formato: xxx.xxx.xxx-xx"
+            placeholder="CPF"><br>
+            <input type="password" name="senha" id="senha" placeholder="Senha (Min 8 Caracteres)" minlength="8" required><br><br>
             <input class="button-azul" type="submit" value="Cadastrar">
           </form>
 

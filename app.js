@@ -87,9 +87,9 @@ app.get('/user', (req, res) => {
 // Rota de cadastro e sistema de cadastramento funcional NÃO REMOVER ESSENCIAL
 //lembrar que o DB QUERY só funciona se no HTML estiver sinalizado os marcadores <Name ="nome"> POR EXEMPLO
 app.post('/cadastro', (req, res) => {
-  const { nome, senha, email } = req.body;
-  const query = 'INSERT INTO tabela (nome, senha, email, type) VALUES (?, ?, ? , "Leitor")';
-  db.query(query, [nome, senha, email], (err, result) => {
+  const { nome, senha, email, cpf } = req.body;
+  const query = 'INSERT INTO tabela (nome, senha, email, cpf, type) VALUES (?, ?, ? , ?, "Leitor")';
+  db.query(query, [nome, senha, email, cpf], (err, result) => {
     if (err) {
       console.error('Erro ao cadastrar o usuário:', err);
       res.status(500).send('Erro ao cadastrar o usuário.');
@@ -193,7 +193,7 @@ app.get('/view',(req,res)=>{
 
 db.connect();
 app.get('/viewadmin', (req, res) => {
-  db.query('SELECT nome , senha, email, type  FROM tabela', (err, rows) => {
+  db.query('SELECT nome , senha, email, type, cpf  FROM tabela', (err, rows) => {
       if (err) throw err;
       res.render('admin/vies', { data: rows });
   });
@@ -206,10 +206,10 @@ app.get('/viewadmin', (req, res) => {
 
 ///////cadastro pelo adm
 app.post('/cadadmin', (req, res) => {
-  const { nome, senha, email, type } = req.body;
+  const { nome, senha, email, type, cpf } = req.body;
 /*   "INSERT INTO tabela (nome, senha, email, type) VALUES (?,?,?, SHA2(?,256))"; */
-  const query = "INSERT INTO tabela (nome, senha, email, type) VALUES (?,?,?,?)";
-  db.query(query, [nome, senha, email, type], (err, result) => {
+  const query = "INSERT INTO tabela (nome, senha, email, type, cpf) VALUES (?,?,?,?,?)";
+  db.query(query, [nome, senha, email, type, cpf], (err, result) => {
     if (err) {
       console.error('Erro ao cadastrar o usuário:', err);
       res.status(500).send('Erro ao cadastrar o usuário.');
@@ -236,9 +236,9 @@ app.post('/controle', (req,res)=>{
 });
 //SISTEMA DE DESCADRAMENTO
 app.post('/descadadmin', (req, res) => {
-  const { nome, senha, email, type } = req.body;
-  const query = 'DELETE FROM tabela WHERE nome = ? AND senha = ? AND email = ? AND type = ?';
-  db.query(query, [nome, senha, email, type], (err, result) => {
+  const { nome, senha, email, type, cpf } = req.body;
+  const query = 'DELETE FROM tabela WHERE nome = ? AND senha = ? AND email = ? AND type = ? AND cpf = ?';
+  db.query(query, [nome, senha, email, type, cpf], (err, result) => {
     if (err) {
       console.error('Erro ao deletar o usuário:', err);
       res.status(500).send('Erro ao deletar o usuário.');
