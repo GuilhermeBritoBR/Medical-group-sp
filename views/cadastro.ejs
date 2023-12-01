@@ -3,6 +3,23 @@
 
 <%- include('head-1'); %>
 
+
+<script>
+    function mascara(i){
+   
+   var v = i.value;
+   
+   if(isNaN(v[v.length-1])){ // impede entrar outro caractere que não seja número
+      i.value = v.substring(0, v.length-1);
+      return;
+   }
+   
+   i.setAttribute("maxlength", "14");
+   if (v.length == 3 || v.length == 7) i.value += ".";
+   if (v.length == 11) i.value += "-";
+
+}
+</script>
 <body>
     <!---esse é o banner com todos os menus inclusive o de logar-->
     <div class="banner-container">
@@ -27,10 +44,12 @@
             <input type="text" name="nome" id="nome" placeholder="Nome" required><br><br>
             
             <input type="email" name="email" id="email" placeholder="Email" required><br><br>
-            <input type="text" name="cpf" id="cpf"  \
-			pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" \
+            <!-- <input type="number" name="cpf" id="cpf"  \
+			pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})|(\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2}) \  "
 			title="Digite o seu CPF no formato: xxx.xxx.xxx-xx"
-            placeholder="CPF"><br>
+            placeholder="CPF"><br> -->
+            <input oninput="mascara(this)" type="text" name="cpf" id="cpf" placeholder="CPF"><br>
+
             <input type="password" name="senha" id="senha" placeholder="Senha (Min 8 Caracteres)" minlength="8" required><br><br>
             <input class="button-azul" type="submit" value="Cadastrar">
           </form>

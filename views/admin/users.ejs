@@ -3,7 +3,22 @@
     <%- include('../head-1'); %>
     <body >
         <!---esse é o banner com todos os menus inclusive o de logar-->
+        <script>
+            function mascara(i){
+           
+           var v = i.value;
+           
+           if(isNaN(v[v.length-1])){ // impede entrar outro caractere que não seja número
+              i.value = v.substring(0, v.length-1);
+              return;
+           }
+           
+           i.setAttribute("maxlength", "14");
+           if (v.length == 3 || v.length == 7) i.value += ".";
+           if (v.length == 11) i.value += "-";
         
+        }
+        </script>
         <div class="banner-container">
             <div class="logo-div">
                 <img src="../assets/logo.png">
@@ -45,10 +60,7 @@
                         <option>Leitor</option>
                         <option >Doutor</option>
                     </select><br><br>
-                    <input type="text" name="cpf" id="cpf"  \
-			pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" \
-			title="Digite o seu CPF no formato: xxx.xxx.xxx-xx"
-            placeholder="CPF"><br>
+                    <input oninput="mascara(this)" type="text" name="cpf" id="cpf" placeholder="CPF"><br>
             <input type="password" name="senha" id="senha" placeholder="Senha (Min 8 Caracteres)" minlength="8" required><br><br>
                     <input class="button-azul" type="submit" value="Adicionar"><br><br>
                     <button class="button-azul" onclick="revers()">Outra opção</button>
@@ -70,10 +82,8 @@
                             <option>Leitor</option>
                             <option >Doutor</option>
                         </select><br><br>
-                        <input type="text" name="cpf" id="cpf"  \
-			pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" \
-			title="Digite o seu CPF no formato: xxx.xxx.xxx-xx"
-            placeholder="CPF"><br>
+                        <input oninput="mascara(this)" type="text" name="cpf" id="cpf" placeholder="CPF"><br>
+
             <input type="password" name="senha" id="senha" placeholder="Senha" minlength="8" required><br><br>
                         <input style="background-color: rgb(182, 9, 9);"  class="button-azul" type="submit" value="Remover"><br><br>
                        

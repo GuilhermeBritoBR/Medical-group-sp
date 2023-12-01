@@ -99,7 +99,7 @@ app.post('/cadastro', (req, res) => {
       db.query(SQL, [nome], (err, result)=>{
         if(err){
           console.log('Erro no cadastro!');
-          res.status(500).send('Erro ao cadastrar o usuário.');
+          res.render('error')
         }else{
           console.log('Usuário cadastrado com sucesso!');
       res.render('user', {data:result});
@@ -159,7 +159,7 @@ app.get('/login', (req, res) => {
       } else {
           console.log('Credenciais inválidas');
           
-          res.status(401).send('Credenciais inválidas');
+          res.render('error')
       }
   });
 });
@@ -369,7 +369,7 @@ app.post('/system_exames',(req,res)=>{
   console.log({nome,type,data,horas,obs});
   interno.query(SQL, [nome, type,data,horas,obs], (err,result)=>{
   if(err){
-    console.log("Erro em inserir dados de exame!");
+    console.log("Erro em inserir dados de exame!", err);
     res.sendStatus(251),("Erro ao inserir dados de exame!");
   }else{
     res.redirect('/index_doctor');
