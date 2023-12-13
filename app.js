@@ -109,7 +109,7 @@ app.post('/cadastro', (req, res) => {
           res.render('error')
         }else{
           console.log('Usuário cadastrado com sucesso!');
-      res.render('user', {data:result});
+      res.render('login', {data:result});
         }
       })
       ;
