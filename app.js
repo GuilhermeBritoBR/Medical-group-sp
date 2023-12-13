@@ -85,11 +85,11 @@ app.use(express.static('views'));
 
 });
 //rota do href da pagina de login e cadastro pós validado para a de usuário
-app.get('/user', (req, res) => {
-  res.render('user2'); 
-  app.use(express.static('views'));
-  res.render('styles.css');
-  });
+// app.get('/user', (req, res) => {
+//   res.render('user2'); 
+//   app.use(express.static('views'));
+//   res.render('styles.css');
+//   });
   
 // Rota de cadastro e sistema de cadastramento funcional NÃO REMOVER ESSENCIAL
 //lembrar que o DB QUERY só funciona se no HTML estiver sinalizado os marcadores <Name ="nome"> POR EXEMPLO
@@ -118,10 +118,11 @@ app.post('/cadastro', (req, res) => {
   });
 });
 //Aqui tambem para renderizar a userpage pós validação
-app.get('/user', (req, res) => {
-  res.render('user2');
+app.get('/user', isUserAuthenticated ,(req, res) => {
+  res.render('user2'),{data: req.session.user };
   
 });
+
 //login
 //aqui serve para renderizar a pagina de login NÃO REMOVER, ESSENCIAL
 app.get('/login', (req, res) => {
@@ -160,6 +161,25 @@ function isAuthenticated(req, res, next) {
       res.redirect('/login');
   }
 }
+function isDoctorAuthenticated(req, res, next) {
+  // Verifique se a sessão contém informações do usuário
+  if (req.session && req.session.user && req.session.user.tipo.toLowerCase() === 'doutor')  {
+      return next();
+  } else {
+      // Redirecione para a página de login se não estiver autenticado
+      res.redirect('/login');
+  }
+}
+
+function isUserAuthenticated(req, res, next) {
+  const userSession = req.session.user;
+  if (userSession && userSession.tipo.toLowerCase() === 'leitor') {
+      return next();
+  } else {
+      res.redirect('/login');
+  }
+}
+app.use('/user', isUserAuthenticated);
 app.use('/index_admin', isAuthenticated);
 // Use o middleware para proteger rotas administrativas
 
@@ -198,12 +218,12 @@ app.get('/logout', (req, res) => {
           // Redirecione com base no valor de "type".
           switch (userType.toLowerCase()) {
               case 'administrador':
-                  res.render('admin/index2', {data:result});
+                  res.render('admin/index', {data:result});
                   break;
               case 'doutor':
-                  res.render('doctor/index2', {data:result});
+                  res.render('doctor/index', {data:result});
                   break;
-              default:
+              case 'leitor':
                   console.log('Tipo de usuário desconhecido');
                   res.render('user', {data:result});
                   break;
@@ -321,8 +341,8 @@ interno.connect((err) => {
 });
 //vamos la, vou capturar os dados de agendamento do paciente
 //rota para isso
-app.get('/agendamento',(req,res)=>{
-  res.render('./agendamento');
+app.get('/agendamento', isUserAuthenticated,(req,res)=>{
+  res.render('./agendamento', {data: req.session.user} );
 });
 app.post('/consulta',(req,res)=>{
   const { nome, idade, especialidade, motivo , dia , hora, deficiencia } = req.body;
@@ -346,7 +366,7 @@ interno.connect();
 app.get('/agendamentoview', (req, res) => {
   interno.query('SELECT nome , idade, especialidade, motivo, dia, hora, deficiencia  FROM Pacientes', (err, rows) => {
       if (err) throw err;
-      res.render('doctor/consultas', { data: rows });
+      res.render('doctor/consultas', {data: req.session.user ,data: rows });
       
   });
 });
@@ -369,8 +389,8 @@ app.get('/consultashtml', isAuthenticated,(req, res) => {
 });
 
 ///rota para medicos
-app.get('/index_doctor',(req,res)=>{
-  res.render('doctor/index2');
+app.get('/index_doctor',isDoctorAuthenticated, (req,res)=>{
+  res.render('doctor/index2', { data: req.session.user });
 });
 //sistema para o usuário vizualizar suas própias consultas
 interno.connect();
@@ -381,11 +401,11 @@ app.get('/consultas', (req, res) => {
   });
 });
 //rota para ir para a página que seleciona a consulta
-app.get('/selectconsultas',(req,res)=>{
-  res.render('select_consulta');
+app.get('/selectconsultas',isUserAuthenticated,(req,res)=>{
+  res.render('select_consulta', {data: req.session.user });
 
 });
-app.post('/select',(req,res)=>{
+app.post('/select',isUserAuthenticated,(req,res)=>{
  const{nome} = req.body;
  const SQL = 'SELECT * FROM Pacientes WHERE nome = ?';
  interno.query(SQL, [nome] ,(err,result)=>{
@@ -397,7 +417,7 @@ app.post('/select',(req,res)=>{
     interno.query(query, [nome ], (err,row)=>{
       if(err)throw err;
       console.log(row)
-      res.render('consultas.ejs',{dados: row});
+      res.render('consultas.ejs',{data: req.session.user ,dados: row});
   });
     
   }
@@ -412,8 +432,8 @@ app.get('/resultados_doctor',(req,res)=>{
 
 
 ///rota para acessar exames do médico
-app.get('/exames_doctor',(req,res)=>{
-  res.render('doctor/exames');
+app.get('/exames_doctor', isDoctorAuthenticated,(req,res)=>{
+  res.render('doctor/exames', {data: req.session.user});
 })
 app.post('/system_exames',(req,res)=>{
   const SQL = 'INSERT into Exames (nome, type , data, horas, obs) VALUES (?,?,?,?,?);';
@@ -462,8 +482,8 @@ app.get('/back',(req,res)=>{
   res.sendfile('../index.html');
 });
 //rota para chegar na página de buscar exames
-app.get('/result_exames',(req,res)=>{
-  res.render('resultados');
+app.get('/result_exames',isUserAuthenticated,(req,res)=>{
+  res.render('resultados', {data: req.session.user });
 });
 app.post('/definir_exames',(req,res)=>{
   const SQL = 'SELECT * FROM Exames WHERE nome = ?';
@@ -484,11 +504,14 @@ app.post('/definir_exames',(req,res)=>{
   })
 });
 
-app.get('/view_exames_all', (err,res)=>{
+app.get('/view_exames_all', isDoctorAuthenticated,(req,res)=>{
   const SQL = 'SELECT * FROM Exames ';
   interno.query(SQL,(err,row)=>{
     if(err)throw err;
     console.log(row);
-    res.render('doctor/resultados_doctor', {data:row});
+    res.render('doctor/resultados_doctor', {data: req.session.user , data:row});
   })
+})
+app.get('/planos_user', isUserAuthenticated,(req,res)=>{
+  res.render('planos-user', {data: req.session.user });
 })
