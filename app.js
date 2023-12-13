@@ -3,6 +3,7 @@ const express = require('express');
 const mysql = require('mysql2');
 const app = express();
 const bodyParser = require('body-parser');
+const session = require('express-session');
 const port = 7000;
 //devo lembrar que o mysql deve ser sempre o 2, utilizar o maria db para manejamento de dados
 //Grupo: Antunes, Brito, MATHEUS E MILENA
@@ -21,6 +22,12 @@ db.connect((err) => {
     console.log('Conexão com o banco de dados estabelecida com sucesso!');
   }
 });
+
+app.use(session({
+  secret: 'flamengo',
+  resave: false,
+  saveUninitialized: true
+}));
 //bom este database serve para conexões internas, como exemp, o agendamento e exames
 /* const agendamento = mysql.createConnection({
   host: 'localhost',
@@ -121,15 +128,49 @@ app.get('/login', (req, res) => {
     res.render('login');
   });
   //rota para index do admin
-  app.get('/index_admin',(req,res)=>{
-    res.render('./admin/index2.ejs');
+
+ 
+
+  app.get('/index_admin', isAuthenticated,(req,res)=>{
+    
+    res.render('./admin/index2.ejs', { data: req.session.user });
   });
   //rota para voltar para index do adm
 
-  app.get('/index_admin_volta',(req,res)=>{
-    res.render('./admin/index2.ejs');
+  app.get('/index_admin_volta',isAuthenticated,(req,res)=>{
+    res.render('./admin/index2.ejs',{ data: req.session.user } );
   });
   ////////
+// Rota para fazer logout
+app.get('/logout', (req, res) => {
+  req.session.destroy(() => {
+    res.redirect('/');
+    console.log('Desconectado')
+  });
+});
+////////////
+
+// Middleware de autenticação
+function isAuthenticated(req, res, next) {
+  // Verifique se a sessão contém informações do usuário
+  if (req.session && req.session.user && req.session.user.tipo.toLowerCase() === 'administrador')  {
+      return next();
+  } else {
+      // Redirecione para a página de login se não estiver autenticado
+      res.redirect('/login');
+  }
+}
+app.use('/index_admin', isAuthenticated);
+// Use o middleware para proteger rotas administrativas
+
+app.get('/logout', (req, res) => {
+  req.session.destroy(() => {
+    res.redirect('/');
+    console.log('Desconectado')
+  });
+});
+
+
   app.post('/login', (req, res) => {
     const { nome, senha } = req.body;
     const query = 'SELECT * FROM tabela WHERE nome = ? AND senha = ?';
@@ -141,15 +182,26 @@ app.get('/login', (req, res) => {
           res.redirect('login', Error);
       } else if (result.length > 0) {
           // O login foi bem-sucedido, obtenha o valor "type" do resultado.
+         
+            // Autenticação bem-sucedida
+       
           const userType = result[0].type;
           
+          req.session.user = {
+            nome: result[0].nome,
+            tipo: userType
+            // Adicione outras informações necessárias
+        };
+
+
+
           // Redirecione com base no valor de "type".
-          switch (userType) {
-              case 'Administrador':
-                  res.render('admin/index', {data:result});
+          switch (userType.toLowerCase()) {
+              case 'administrador':
+                  res.render('admin/index2', {data:result});
                   break;
-              case 'Doutor':
-                  res.render('doctor/index', {data:result});
+              case 'doutor':
+                  res.render('doctor/index2', {data:result});
                   break;
               default:
                   console.log('Tipo de usuário desconhecido');
@@ -177,12 +229,13 @@ app.get('/login', (req, res) => {
     
   //AQUI VOU INTRODUZIR SALVAMENTO DE INFORMAÇÕES validantion PELA users.ejs do admin
   //rota na qual vou introduzir EJS de agendamentos
-  app.get('/administrador', (req, res) => {
+  app.get('/administrador',isAuthenticated, (req, res) => {
     
-    res.render('../views/admin/users');
+    res.render('../views/admin/users'), { data: req.session.user };
     
 
   });
+  
 //rota que leva a página de vizualição
 app.get('/view',(req,res)=>{
   res.render('./admin/vies.ejs');
@@ -192,12 +245,13 @@ app.get('/view',(req,res)=>{
 
 
 db.connect();
-app.get('/viewadmin', (req, res) => {
+app.get('/viewadmin',isAuthenticated, (req, res) => {
   db.query('SELECT nome , senha, email, type, cpf  FROM tabela', (err, rows) => {
       if (err) throw err;
-      res.render('admin/vies', { data: rows });
+      res.render('admin/vies', { data: req.session.user,data: rows });
   });
 });
+
 
 
 
@@ -306,16 +360,14 @@ app.get('/agendamentoview', (req, res) => {
   res.render('./consultas');
 }); */
 ///rota para consultas do adm
-app.get('/consultashtml', (req, res) => {
+app.get('/consultashtml', isAuthenticated,(req, res) => {
   interno.query('SELECT nome , idade, especialidade, motivo, dia, hora, deficiencia  FROM Pacientes', (err, rows) => {
       if (err) throw err;
-      res.render('admin/consultas', { data: rows });
+      res.render('admin/consultas', { data: req.session.user ,  data: rows });
       
   });
 });
-app.get('/consultashtml',(req,res)=>{
-  res.render('admin/consultas');
-});
+
 ///rota para medicos
 app.get('/index_doctor',(req,res)=>{
   res.render('doctor/index2');
