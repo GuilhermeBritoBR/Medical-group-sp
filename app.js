@@ -485,7 +485,7 @@ app.get('/back',(req,res)=>{
 app.get('/result_exames',isUserAuthenticated,(req,res)=>{
   res.render('resultados', {data: req.session.user });
 });
-app.post('/definir_exames',(req,res)=>{
+app.post('/definir_exames',isUserAuthenticated,(req,res)=>{
   const SQL = 'SELECT * FROM Exames WHERE nome = ?';
   const {nome} =req.body;
   interno.query(SQL,[nome],(err,result)=>{
@@ -497,7 +497,7 @@ app.post('/definir_exames',(req,res)=>{
       interno.query(SQL, [nome], (err,row)=>{
         if(err)throw err;
         console.log(row);
-        res.render('result_user.ejs',{data: row})});
+        res.render('result_user.ejs',{data: req.session.user ,data: row})});
      
       
     }
