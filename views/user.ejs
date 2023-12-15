@@ -40,30 +40,7 @@
         </div>
         </div>
         <!--esssa é aseção de botoes com funciionalidades-->
-        <div class="secao-botoes">
-            <a  class="none" href="/selectconsultas">
-            <div class="botao-calendario">
-                
-                <button class="botao-img"><img src="assets/Icon.png"></button>
-                <h3>Consultas</h4>
-            </div></a>
-            <div class="botao-agendamentos">
-                <a class="none" href="/agendamento">
-                <button class="botao-img"><img src="assets/calendar.png"></button>
-                <h3>Agendamento</h4> </a>
-            </div>
-          
-            <div class="botao-resultados">
-                <a class="none" href="/result_exames">
-                <button class="botao-img"><img src="assets/Group 1.png"></button>
-                <h3>Exames</h4> </a>
-            </div>
-            <div class="botao-planos">
-                <a class="none" href="/planos_user">
-                <button class="botao-diferenciado"><img class="dif"src="assets/Icon (1).png"></button>
-                <h3>Planos</h4> </a>
-            </div>
-        </div>
+        <%- include('secao-botoes-logado'); %>
         <!--carossel de imagens dentro dessa div amigos-->
         <div class="secao-img">
             <div class="img-empatia">
