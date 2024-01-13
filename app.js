@@ -10,7 +10,7 @@ const port = 7000;
 //este database serve para a validação e cadastro do usuario
 const db = mysql.createConnection({
   host: 'localhost',
-  user: 'phpmyadmin',
+  user: 'root',
   password: 'flamengo',
   database: 'db',
 });
@@ -327,9 +327,9 @@ app.post('/descadadmin', (req, res) => {
 //OUTRO BANCO DE DADOS COM NOVA CONEXÃO
 const interno = mysql.createConnection({
   host: 'localhost',
-  user: 'phpmyadmin',
+  user: 'root',
   password: 'flamengo',
-  database: 'Interno',
+  database: 'interno',
 });
 //sem o db conect, o servidor não é ativado, lembrar-se 
 interno.connect((err) => {
@@ -363,7 +363,7 @@ app.get('/agendamentorota',(req,res)=>{
 });
 ///vizualização das consultas
 interno.connect();
-app.get('/agendamentoview', (req, res) => {
+app.get('/agendamentoview', isDoctorAuthenticated, (req, res) => {
   interno.query('SELECT nome , idade, especialidade, motivo, dia, hora, deficiencia  FROM Pacientes', (err, rows) => {
       if (err) throw err;
       res.render('doctor/consultas', {data: req.session.user ,data: rows });
